@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block title %}My Projects{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <h2>My Projects</h2>
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="d-flex justify-content-end mb-4">
+        <a href="{{ url_for('questions') }}" class="btn btn-primary">Create New Project</a>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="row">
+        {% for detail in project_details %}
+            <div class="col-md-6 mb-4">
+                <!-- Wrap the entire card in an anchor tag to make it clickable -->
+                <a href="{{ url_for('project', project_id=detail.project.id) }}" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">{{ detail.project.name }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Display Criteria Answers -->
+                            {% for criterion, answer in detail.criteria_answers.items() %}
+                                <p><strong>{{ criterion.replace('_', ' ').capitalize() }}:</strong> {{ answer }}</p>
+                            {% endfor %}
+                            <!-- Display Selected Techniques -->
+                            <p><strong>Selected Techniques:</strong></p>
+                            <ul class="list-unstyled">
+                                {% if detail.techniques %}
+                                    {% for technique in detail.techniques %}
+                                        <li>- {{ technique }}</li>
+                                    {% endfor %}
+                                {% else %}
+                                    <li class="text-muted">No techniques selected.</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <span>Click to View Project</span>
+                            <form action="{{ url_for('delete_project', project_id=detail.project.id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this project?');">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete Project</button>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-info" role="alert">
+                    You have no projects yet. Click "Create New Project" to get started!
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

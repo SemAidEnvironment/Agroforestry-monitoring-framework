@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}Project: {{ project.name }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h3>Project: {{ project.name }}</h3>
+            </div>
+            <div class="card-body">
+                <h5>Criteria Answers:</h5>
+                <ul>
+                    {% for criterion, answer in criteria_answers.items() %}
+                        <li><strong>{{ criterion.replace('_', ' ').capitalize() }}:</strong> {{ answer }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h4>Selected Techniques</h4>
+            </div>
+            <div class="card-body">
+                {% if techniques %}
+                    <div class="accordion" id="techniqueAccordion">
+                        {% for technique in techniques %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ loop.index }}">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapse{{ loop.index }}">
+                                        {{ technique.technique_name }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#techniqueAccordion">
+                                    <div class="accordion-body">
+                                        <p>{{ technique.description }}</p>
+                                        <hr>
+                                        <img src="{{ url_for('static', filename='images/' + technique.image_filename) }}" alt="Technique Image" class="img-fluid mb-3">
+                                        <p>Here you can find an elaborate description of the technique and its disadvantages and advantages.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No techniques have been selected for this project yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <a href="{{ url_for('longlist', project_id=project.id) }}" class="btn btn-primary">Go Back to Longlist</a>
+        <a href="{{ url_for('account') }}" class="btn btn-secondary">Back to Account</a>
+    </div>
+</div>
+{% endblock %}

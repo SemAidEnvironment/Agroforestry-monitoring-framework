@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}Longlist of Techniques{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Longlist of Techniques</h2>
+
+    <!-- Display alert if no techniques fit the criteria -->
+    {% if not fitting_techniques %}
+        <div class="alert alert-warning mt-4" role="alert">
+            No techniques fit with the currently selected conditions.
+        </div>
+    {% endif %}
+
+    <form method="POST" id="techniqueForm">
+        <!-- Fitting Techniques Section -->
+        {% if fitting_techniques %}
+            <h4>Available Techniques</h4>
+            <div class="row mb-3">
+                {% for technique in fitting_techniques %}
+                    <div class="col-md-4">
+                        <div class="card technique-card {% if technique.technique_name in selected_techniques %}highlighted{% endif %}" id="technique-card-{{ loop.index }}">
+                            <div class="card-header">
+                                <div class="form-check">
+                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique" value="{{ technique.technique_name }}"
+                                           id="technique{{ loop.index }}" {% if technique.technique_name in selected_techniques %}checked{% endif %}>
+                                    <label class="form-check-label" for="technique{{ loop.index }}">
+                                        {{ technique.technique_name }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-link text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#fittingCollapse{{ loop.index }}" aria-expanded="false" aria-controls="fittingCollapse{{ loop.index }}">
+                                    More Details
+                                </button>
+                                <div id="fittingCollapse{{ loop.index }}" class="collapse">
+                                    <p class="text-muted">{{ technique.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Non-Fitting Selected Techniques Section -->
+        {% if non_fitting_selected_techniques %}
+            <h4 class="mt-4 text-danger">Selected Techniques That No Longer Fit</h4>
+            <div class="row mb-4">
+                {% for technique in non_fitting_selected_techniques %}
+                    <div class="col-md-4">
+                        <div class="card technique-card non-fitting {% if technique.technique_name in selected_techniques %}highlighted{% endif %}" id="nonFittingTechnique{{ loop.index }}">
+                            <div class="card-header">
+                                <div class="form-check">
+                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique" value="{{ technique.technique_name }}"
+                                           id="nonFittingTechniqueCheckbox{{ loop.index }}" checked>
+                                    <label class="form-check-label" for="nonFittingTechniqueCheckbox{{ loop.index }}">
+                                        {{ technique.technique_name }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-link text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#nonFittingCollapse{{ loop.index }}" aria-expanded="false" aria-controls="nonFittingCollapse{{ loop.index }}">
+                                    More Details
+                                </button>
+                                <div id="nonFittingCollapse{{ loop.index }}" class="collapse">
+                                    <p class="text-muted">{{ technique.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary mt-3">Finalize Selection</button>
+    </form>
+</div>
+
+<!-- JavaScript to handle checkbox change and apply highlighting -->
+<script>
+    document.querySelectorAll('.technique-checkbox').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const card = checkbox.closest('.technique-card');
+            if (checkbox.checked) {
+                card.classList.add('highlighted');
+            } else {
+                card.classList.remove('highlighted');
+            }
+        });
+
+        // Initial check to highlight pre-checked boxes
+        if (checkbox.checked) {
+            checkbox.closest('.technique-card').classList.add('highlighted');
+        }
+    });
+</script>
+{% endblock %}

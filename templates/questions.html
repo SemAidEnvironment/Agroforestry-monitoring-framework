@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}Questions{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0">Project Setup - Questions</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <!-- Project Name -->
+                <div class="mb-3">
+                    <label for="project_name" class="form-label"><strong>Project Name</strong></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="project_name" name="project_name" value="{{ project.name if project else '' }}"
+                               {% if project %}readonly{% endif %} required>
+                        <button type="button" class="btn btn-secondary" id="toggleNameEdit">
+                            Change Project Name
+                        </button>
+                    </div>
+                </div>
+                    <!-- Loop over each criterion and render it as a dropdown -->
+                    {% for criterion in criteria %}
+                        <div class="mb-3">
+                            <label for="criteria_{{ criterion.id }}" class="form-label">
+                                <strong>{{ criterion.name.replace('_', ' ').capitalize() }}</strong>
+                            </label>
+                            <select name="criteria_{{ criterion.id }}" id="criteria_{{ criterion.id }}" class="form-select" required>
+                                {% for option in criterion.options.split(',') %}
+                                    <option value="{{ option }}"
+                                        {% if project_criteria_answers.get(criterion.id) == option %}selected{% endif %}>
+                                        {{ option }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+                <button type="submit" class="btn btn-primary">Save and Continue</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- script for making the name-editing button-->
+<script>
+    document.getElementById('toggleNameEdit').addEventListener('click', function() {
+        const projectNameInput = document.getElementById('project_name');
+        projectNameInput.readOnly = false; // Enable editing of the project name
+
+        // Remove the button from the DOM
+        this.parentNode.removeChild(this);
+    });
+</script>
+
+{% endblock %}
