@@ -93,12 +93,36 @@
     color: white; /* White text for better contrast */
 }
 
-
-
-
 /* Disabled link styling */
 .disabled-link {
     color: #aaa;
     pointer-events: none;
     text-decoration: none;
 }
+/* Center the text within the landing page */
+.container-fluid {
+    background-image: url('../images/forest_background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+h1.display-4 {
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+footer {
+    color: #666;
+    font-size: 0.9rem;
+}
+

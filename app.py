@@ -66,8 +66,11 @@ class SelectedTechnique(db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+@app.route("/")
+def landing():
+    return render_template("landing.html")
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('account'))
@@ -264,7 +267,7 @@ def project(project_id):
 def logout():
     logout_user()
     flash('You have been logged out.', 'info')
-    return redirect(url_for('login'))
+    return redirect(url_for('landing'))
 
 
 @app.route("/delete_project/<int:project_id>", methods=['POST'])
@@ -278,6 +281,32 @@ def delete_project(project_id):
     flash('Your project has been deleted!', 'success')
     return redirect(url_for('account'))
 
+
+@app.route("/project/<int:project_id>/technique/<string:technique_name>")
+@login_required
+def intervention(project_id, technique_name):
+    project = Project.query.get_or_404(project_id)
+    # Assuming that techniques are directly related to the project
+    technique = next((tech for tech in project.techniques if tech.technique_name == technique_name), None)
+    if technique is None:
+        abort(404)  # Technique not found in the project
+    # Pass both `project` and `technique` to the template
+    return render_template("intervention.html", project=project, technique=technique)
+
+@app.route("/project/<int:project_id>/technique/<string:technique_name>/remove", methods=['POST'])
+@login_required
+def remove_technique(project_id, technique_name):
+    project = Project.query.get_or_404(project_id)
+    technique = next((tech for tech in project.techniques if tech.technique_name == technique_name), None)
+
+    if technique:
+        db.session.delete(technique)
+        db.session.commit()
+        flash(f"Technique '{technique_name}' has been removed from the project.", "warning")
+    else:
+        flash(f"Technique '{technique_name}' not found in the project.", "danger")
+
+    return redirect(url_for('project', project_id=project.id))
 
 if __name__ == '__main__':
     app.run(debug=True)

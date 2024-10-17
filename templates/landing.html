@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroforestry Monitoring Framework</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div style="position: relative; height: 100vh; background-image: url('{{ url_for('static', filename='images/agroforestry.png') }}'); background-size: cover; background-position: center;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+        <div class="container d-flex flex-column justify-content-center align-items-center text-white" style="height: 100%;">
+            <h1 class="display-4 fw-bold">Welcome to the Agroforestry Monitoring Framework</h1>
+            <p class="lead text-center mb-4">Helping you select and monitor agroforestry techniques effectively.</p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg mb-5">Log In</a>
+
+            <!-- New Section with Three Boxes -->
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">Personalized Recommendations</h5>
+                            <p class="card-text">Get tailored suggestions based on your specific agroforestry goals and project needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">Comprehensive Monitoring</h5>
+                            <p class="card-text">Track and assess your projects with a range of techniques and tools designed for agroforestry.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">Data-Driven Insights</h5>
+                            <p class="card-text">Leverage data insights to enhance decision-making and improve project outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

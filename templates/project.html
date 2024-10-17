@@ -3,6 +3,64 @@
 {% block title %}Project: {{ project.name }}{% endblock %}
 
 {% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<style>
+    /* Background image styling */
+    body {
+        background-image: url('{{ url_for('static', filename='images/background2.png') }}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    .content-overlay {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+        font-weight: bold;
+    }
+
+    .card-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary, .btn-danger {
+        border-radius: 20px;
+    }
+
+    .alert {
+        margin-bottom: 1rem;
+    }
+
+        /* Hover effect for project cards */
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-4 shadow-sm">
@@ -43,6 +101,12 @@
                                         <hr>
                                         <img src="{{ url_for('static', filename='images/' + technique.image_filename) }}" alt="Technique Image" class="img-fluid mb-3">
                                         <p>Here you can find an elaborate description of the technique and its disadvantages and advantages.</p>
+                                        <!-- Button linking to the detailed technique page -->
+                                        <p>
+                                            <a href="{{ url_for('intervention', project_id=project.id, technique_name=technique.technique_name) }}" class="btn btn-primary">
+                                                Find out more about this technique
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

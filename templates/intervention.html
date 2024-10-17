@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}Technique: {{ technique.technique_name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Technique Header -->
+    <div class="text-center mb-4">
+        <h1 class="display-4">{{ technique.technique_name }}</h1>
+        <p class="text-muted">{{ technique.description }}</p>
+    </div>
+
+    <!-- Technique Image -->
+    {% if technique.image_filename %}
+        <div class="text-center mb-4">
+            <img src="{{ url_for('static', filename='images/' + technique.image_filename) }}" alt="{{ technique.technique_name }}" class="img-fluid rounded" style="max-height: 400px;">
+        </div>
+    {% endif %}
+
+    <!-- Details Section -->
+    <div class="accordion mb-4" id="detailsAccordion">
+        <!-- Advantages Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="advantagesHeading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#advantagesCollapse" aria-expanded="true" aria-controls="advantagesCollapse">
+                    Advantages
+                </button>
+            </h2>
+            <div id="advantagesCollapse" class="accordion-collapse collapse show" aria-labelledby="advantagesHeading" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <p>Here you can describe the advantages of using {{ technique.technique_name }} in the agroforestry framework.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disadvantages Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="disadvantagesHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#disadvantagesCollapse" aria-expanded="false" aria-controls="disadvantagesCollapse">
+                    Disadvantages
+                </button>
+            </h2>
+            <div id="disadvantagesCollapse" class="accordion-collapse collapse" aria-labelledby="disadvantagesHeading" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <p>Here you can discuss the potential disadvantages of using {{ technique.technique_name }}.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="additionalInfoHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#additionalInfoCollapse" aria-expanded="false" aria-controls="additionalInfoCollapse">
+                    Additional Information
+                </button>
+            </h2>
+            <div id="additionalInfoCollapse" class="accordion-collapse collapse" aria-labelledby="additionalInfoHeading" data-bs-parent="#detailsAccordion">
+                <div class="accordion-body">
+                    <p>Provide more detailed information here, such as best practices, tips for implementation, or case studies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Remove Technique Button -->
+    <form action="{{ url_for('remove_technique', project_id=project.id, technique_name=technique.technique_name) }}" method="POST" onsubmit="return confirm('Are you sure you want to remove {{technique.technique_name}} from your project?');">
+        <button type="submit" class="btn btn-danger">Remove Technique</button>
+    </form>
+
+    <!-- Back Button -->
+    <div class="text-center">
+        <a href="{{ url_for('project', project_id=project.id) }}" class="btn btn-secondary mt-3">Back to {{project.name}}</a>
+    </div>
+</div>
+{% endblock %}

@@ -2,7 +2,57 @@
 {% block title %}My Projects{% endblock %}
 
 {% block content %}
-<div class="container">
+
+<style>
+    /* Background image styling */
+    body {
+        background-image: url('{{ url_for('static', filename='images/background2.png') }}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+    .content-overlay {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+        font-weight: bold;
+    }
+
+    .card-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary, .btn-danger {
+        border-radius: 20px;
+    }
+
+    .alert {
+        margin-bottom: 1rem;
+    }
+
+            /* Hover effect for project cards */
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        border-color: #007bff;
+        background-color: #f0f8ff; /* Light color change on hover */
+</style>
+
+<div class="container content-overlay">
     <div class="d-flex justify-content-between align-items-center my-4">
         <h2>My Projects</h2>
         <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
@@ -66,4 +116,5 @@
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}
