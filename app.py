@@ -394,11 +394,21 @@ def longlist(project_id):
         reason = []
         for criterion, answer in project_answers.items():
             field = method.get(criterion)
-            if field and "levels" in field and answer not in field["levels"]:
-                reason.append(
-                    f"Your selected {criterion.replace('_', ' ')} is '{answer}', "
-                    f"but this method is suitable for {', '.join(field['levels'])}."
-                )
+            if criterion == "reporting_area" or criterion == "subsections":
+                if field not in answer:
+                    print(field)
+                    reason.append(
+                        f"A Your selected {criterion.replace('_', ' ')} is '{answer}', "
+                        f"but this method is suitable for {(field)}."
+                    )
+            else:
+                if answer not in field["levels"]:
+                    print("ongoing2")
+                    reason.append(
+                        f"B Your selected {criterion.replace('_', ' ')} is '{answer}', "
+                        f"but this method is suitable for {', '.join(field['levels'])}."
+                    )
+
         reasons[method["name"]] = " ".join(reason)
 
     return render_template(

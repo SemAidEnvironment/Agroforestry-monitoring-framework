@@ -417,7 +417,7 @@
                   "extra_information": "Minimal equipment required"
                 },
                 "skills_required": {
-                  "levels": ["medium"],
+                  "levels": ["Medium"],
                   "extra_information": "Includes handling soil samples, Basic ability to conduct open-flame experiments"
                 },
                 "resource_intensive": {
