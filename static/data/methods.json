@@ -1,0 +1,112 @@
+{
+  "methods": [
+    {
+      "name": "Interviews",
+      "phase_of_project": {
+        "levels": ["Baseline Assessment", "Monitoring and Evaluation", "End-evaluation"],
+        "extra_information": null
+      },
+      "budget": {
+        "levels": ["Low"],
+        "extra_information": "Cost dependent on the project area, number of participants, enumerators needed, etc."
+      },
+      "skills_required": {
+        "levels": ["Low"],
+        "extra_information": "Interviewing skills"
+      },
+      "resource_intensive": {
+        "levels": ["Low", "Medium"],
+        "extra_information": "Usually enumerators' salary is not very high"
+      },
+      "costs": {
+        "levels": ["Low"],
+        "extra_information": "Transportation, data entry tools (tablets, notebooks), personnel for interviews"
+      },
+      "description": "Interviews involve direct, structured, semi-structured, or unstructured conversations with participants to gather qualitative and/or quantitative data. They provide insights into personal experiences, perceptions, and context-specific information.",
+      "pros": [
+        "Captures in-depth and detailed information.",
+        "Allows flexibility to explore unexpected topics that arise during discussions.",
+        "Provides human context and nuanced understanding."
+      ],
+      "cons": [
+        "Time-intensive, especially for data collection and analysis.",
+        "Risk of bias introduced by interviewer or respondent.",
+        "Limited scalability, particularly for large populations.",
+        "Relies heavily on the skill and training of the interviewer.",
+        "Potential for higher costs if conducted over remote or challenging geographic areas."
+      ]
+    },
+    {
+      "name": "Questionnaires",
+      "phase_of_project": {
+        "levels": ["Baseline Assessment", "Monitoring and Evaluation", "End-evaluation"],
+        "extra_information": null
+      },
+      "budget": {
+        "levels": ["Low", "Medium"],
+        "extra_information": "Dependent on project area, sample size, and need to purchase electronic support materials (e.g., tablets)"
+      },
+      "skills_required": {
+        "levels": ["Medium"],
+        "extra_information": "Survey design and Data analysis"
+      },
+      "resource_intensive": {
+        "levels": ["Low", "Medium"],
+        "extra_information": "Requires staff for data collection and processing"
+      },
+      "costs": {
+        "levels": ["Low", "Medium"],
+        "extra_information": "Printing or digital survey tools, training of enumerators, transportation for data collection"
+      },
+      "description": "Questionnaires are structured tools for collecting standardized information from a large sample. They can be self-administered or conducted by enumerators and are ideal for gathering quantitative data and some qualitative insights.",
+      "pros": [
+        "Scalable and efficient for large populations.",
+        "Produces standardized and comparable data.",
+        "Can be self-administered, reducing labor costs.",
+        "Easy to automate and analyze using digital tools."
+      ],
+      "cons": [
+        "Limited depth of information.",
+        "Potential for low response rates in self-administered formats.",
+        "Requires careful design to avoid ambiguity or bias.",
+        "Relies on respondent literacy and understanding."
+      ]
+    },
+    {
+      "name": "Focus Group Discussions",
+      "phase_of_project": {
+        "levels": ["Baseline Assessment", "Monitoring and Evaluation", "End-evaluation"],
+        "extra_information": null
+      },
+      "budget": {
+        "levels": ["Low", "Medium"],
+        "extra_information": "Dependent on facilitator costs, participant incentives, etc."
+      },
+      "skills_required": {
+        "levels": ["Medium"],
+        "extra_information": "Facilitation, Group dynamics management and Qualitative analysis"
+      },
+      "resource_intensive": {
+        "levels": ["Medium"],
+        "extra_information": "Requires skilled facilitators and detailed transcription/analysis"
+      },
+      "costs": {
+        "levels": ["Medium"],
+        "extra_information": "Facilitator, refreshments, participant compensation if applicable"
+      },
+      "description": "Focus Group Discussions involve guided conversations with a small group of participants to explore perceptions, opinions, and experiences on a specific topic. They allow for dynamic interaction and deeper insights.",
+      "pros": [
+        "Encourages diverse viewpoints and group interaction.",
+        "Provides rich qualitative data.",
+        "Adaptable to various topics and project phases.",
+        "Can uncover unanticipated issues or ideas."
+      ],
+      "cons": [
+        "Requires skilled facilitators for effective sessions.",
+        "Risk of dominant voices overshadowing others (cultural, religious, and gender dynamics at play).",
+        "Data analysis is time-intensive.",
+        "Less suitable for sensitive or individual-focused topics."
+      ]
+    }
+  ]
+}

@@ -5,47 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agroforestry Monitoring Framework</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --ae-darkblue: #087880; /* Deep water primary */
+            --ae-lightgreen: #C2ED45; /* Jungle primary */
+            --ae-lightblue: #4FD4C7; /* Aqua primary*/
+            --ae-green: #36C726; /* Land primary */
+            --ae-yellow: #FEE327; /* Sun primary */
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background-image: url('{{ url_for('static', filename='images/agroforestry.png') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 20px;
+            color: white;
+        }
+        .overlay {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 0;
+        }
+        .hero h1, .hero p {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .logos img {
+            height: 100px !important;
+            width: auto !important;
+            margin: 10px;
+        }
+        .logos p {
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background-color: var(--ae-darkblue);
+            border-color: var(--ae-darkblue);
+        }
+        .btn-primary:hover {
+            background-color: var(--ae-lightblue);
+            border-color: var(--ae-lightblue);
+        }
+        .accordion-button {
+            background-color: var(--ae-darkblue);
+            color: white;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: var(--ae-lightgreen);
+            color: black;
+        }
+        .card.bg-dark {
+            background-color: var(--ae-green);
+        }
+    </style>
+    <script>
+        async function loadContent() {
+            const response = await fetch('static/data/homepage.json');
+            const data = await response.json();
+
+            // Set content dynamically
+            document.getElementById('title').innerText = data.title;
+            document.getElementById('subtitle').innerText = data.subtitle;
+            document.getElementById('personalizedRecommendations').innerText = data.features.personalizedRecommendations;
+            document.getElementById('comprehensiveMonitoring').innerText = data.features.comprehensiveMonitoring;
+            document.getElementById('dataDrivenInsights').innerText = data.features.dataDrivenInsights;
+
+            // Accordion content
+            document.getElementById('accordionTitle1').innerText = data.accordion.section1.title;
+            document.getElementById('accordionBody1').innerHTML = data.accordion.section1.body;
+            document.getElementById('accordionTitle2').innerText = data.accordion.section2.title;
+            document.getElementById('accordionBody2').innerHTML = data.accordion.section2.body;
+            document.getElementById('accordionTitle3').innerText = data.accordion.section3.title;
+            document.getElementById('accordionBody3').innerHTML = data.accordion.section3.body;
+            document.getElementById('accordionTitle4').innerText = data.accordion.section4.title;
+            document.getElementById('accordionBody4').innerHTML = data.accordion.section4.body;
+
+            // Logos
+            const logosContainer = document.getElementById('logos');
+            logosContainer.innerHTML = `
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img src="${data.logos.rvo.src}" alt="${data.logos.rvo.alt}" class="img-fluid mx-2">
+                        <img src="${data.logos.aidEnvironment.src}" alt="${data.logos.aidEnvironment.alt}" class="img-fluid mx-2">
+                    </div>
+                    <p class="text-center mt-3">${data.logos.rvo.description}</p>
+                    <p class="text-center">${data.logos.aidEnvironment.description}</p>
+                </div>
+            `;
+        }
+
+        window.onload = loadContent;
+    </script>
 </head>
 <body>
+    <div class="hero">
+        <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+            <div class="container">
+                <h1 id="title" class="display-4 fw-bold"></h1>
+                <p id="subtitle" class="lead mb-4"></p>
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Log In to get started</a>
+            </div>
+        </div>
+    </div>
 
-<div style="position: relative; height: 100vh; background-image: url('{{ url_for('static', filename='images/agroforestry.png') }}'); background-size: cover; background-position: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
-        <div class="container d-flex flex-column justify-content-center align-items-center text-white" style="height: 100%;">
-            <h1 class="display-4 fw-bold">Welcome to the Agroforestry Monitoring Framework</h1>
-            <p class="lead text-center mb-4">Helping you select and monitor agroforestry techniques effectively.</p>
-            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg mb-5">Log In</a>
-
-            <!-- New Section with Three Boxes -->
-            <div class="row text-center">
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
-                        <div class="card-body">
-                            <h5 class="card-title">Personalized Recommendations</h5>
-                            <p class="card-text">Get tailored suggestions based on your specific agroforestry goals and project needs.</p>
-                        </div>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white border-0 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Recommendations</h5>
+                        <p id="personalizedRecommendations" class="card-text"></p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
-                        <div class="card-body">
-                            <h5 class="card-title">Comprehensive Monitoring</h5>
-                            <p class="card-text">Track and assess your projects with a range of techniques and tools designed for agroforestry.</p>
-                        </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white border-0 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Comprehensive Monitoring</h5>
+                        <p id="comprehensiveMonitoring" class="card-text"></p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-dark text-white border-0 shadow-lg" style="height: 100%;">
-                        <div class="card-body">
-                            <h5 class="card-title">Data-Driven Insights</h5>
-                            <p class="card-text">Leverage data insights to enhance decision-making and improve project outcomes.</p>
-                        </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-white border-0 shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Data-Driven Insights</h5>
+                        <p id="dataDrivenInsights" class="card-text"></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item border rounded shadow-sm">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="accordionTitle1"></button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="accordionBody1" class="accordion-body bg-light text-dark"></div>
+                </div>
+            </div>
+            <div class="accordion-item border rounded shadow-sm">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="accordionTitle2"></button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div id="accordionBody2" class="accordion-body bg-light text-dark"></div>
+                </div>
+            </div>
+            <div class="accordion-item border rounded shadow-sm">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="#collapseThree" id="accordionTitle3"></button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="accordionBody3" class="accordion-body bg-light text-dark"></div>
+                </div>
+            </div>
+            <div class="accordion-item border rounded shadow-sm">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="#collapseFour" id="accordionTitle4"></button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div id="accordionBody4" class="accordion-body bg-light text-dark"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="logos" class="mt-5"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

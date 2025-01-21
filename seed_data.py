@@ -1,26 +1,26 @@
 from app import app, db, Criteria
+import json
 
 def seed_criteria():
     # Clear the Criteria table to prevent duplicates
     db.session.query(Criteria).delete()
     db.session.commit()
 
-    # Add the new phase criterion
-    phase_criterion = Criteria(
-        name="phase",
-        options="Project design,Baseline building,Mid term evaluation,End evaluation"
-    )
-    db.session.add(phase_criterion)
+    # Load criteria from JSON file
+    with open('static/data/criteria.json', 'r') as file:
+        criteria_list = json.load(file)
 
-    # Add the new technical expertise criterion
-    technical_expertise_criterion = Criteria(
-        name="technical_expertise",
-        options="low,medium,high"
-    )
-    db.session.add(technical_expertise_criterion)
+    # Add criteria dynamically
+    for criterion in criteria_list:
+        new_criterion = Criteria(
+            name=criterion['name'],
+            options=criterion['options']
+        )
+        db.session.add(new_criterion)
 
     # Commit the new entries
     db.session.commit()
+
 
 # Run the seeding within the app context
 with app.app_context():

@@ -3,63 +3,318 @@
 {% block title %}Questions{% endblock %}
 
 {% block content %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+<style>
+    :root {
+        --ae-darkblue: #087880; /* Deep water primary */
+        --ae-lightgreen: #C2ED45; /* Jungle primary */
+        --ae-lightblue: #4FD4C7; /* Aqua primary */
+        --ae-green: #36C726; /* Land primary */
+        --ae-yellow: #FEE327; /* Sun primary */
+    }
+
+    .card-header {
+        background-color: var(--ae-darkblue);
+        color: white;
+    }
+
+    .tooltip {
+        display: none; /* Default state: hidden */
+        position: absolute; /* Position relative to its container */
+        background-color: var(--ae-lightblue); /* Tooltip background color */
+        color: black; /* Text color */
+        border-radius: 4px;
+        padding: 5px 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 99999;
+        font-size: 14px;
+        max-width: 200px;
+    }
+
+    .question-mark {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-color: var(--ae-darkblue);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 16px;
+        cursor: pointer;
+    }
+
+    .tooltip.active {
+        display: block;
+    }
+</style>
 
 <div class="container mt-4">
     <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header">
             <h3 class="card-title mb-0">Project Setup - Questions</h3>
         </div>
         <div class="card-body">
+
+            <!-- Display Flash Messages Here -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} mt-3" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
             <form method="POST">
                 <!-- Project Name -->
                 <div class="mb-3">
-                    <label for="project_name" class="form-label"><strong>Project Name</strong></label>
+                    <label for="project_name" class="form-label">
+                        <strong>Project Name</strong>
+                    </label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="project_name" name="project_name" value="{{ project.name if project else '' }}"
-                               {% if project %}readonly{% endif %} required>
+                        <input type="text" class="form-control" id="project_name" name="project_name"
+                               value="{{ project.name if project else '' }}" {% if project %}readonly{% endif %} required>
                         <button type="button" class="btn btn-secondary" id="toggleNameEdit">
                             Change Project Name
                         </button>
                     </div>
                 </div>
-                    <!-- Loop over each criterion and render it as a dropdown -->
-                    {% for criterion in criteria %}
-                        <div class="mb-3">
-                            <label for="criteria_{{ criterion.id }}" class="form-label">
-                                <strong>{{ criterion.name.replace('_', ' ').capitalize() }}</strong>
+
+                <!-- Reporting Areas -->
+                <div class="mb-3">
+                    <label class="form-label"><strong>Select Reporting Area(s):</strong></label>
+                    {% for area in reporting_areas %}
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input"
+                                   id="reportingArea_{{ area.name | replace(' ', '_') }}"
+                                   name="criteria_reporting_area"
+                                   value="{{ area.name }}"
+                                    {% if project_criteria_answers.get("reporting_area") and area.name in project_criteria_answers["reporting_area"] %}checked{% endif %}>
+                            <label class="form-check-label" for="reportingArea_{{ area.name | replace(' ', '_') }}">
+                                {{ area.name }}
                             </label>
-                            <select name="criteria_{{ criterion.id }}" id="criteria_{{ criterion.id }}" class="form-select" required>
-                                {% for option in criterion.options.split(',') %}
-                                    <option value="{{ option }}"
-                                        {% if project_criteria_answers.get(criterion.id) == option %}selected{% endif %}>
-                                        {{ option }}
-                                    </option>
-                                {% endfor %}
-                            </select>
+                            <!-- Question Mark Button -->
+                            <button type="button" class="btn btn-sm btn-outline-info"
+                                    data-bs-toggle="modal" data-bs-target="#infoModal"
+                                    data-title="{{ area.name }}" data-description="{{ area.description }}">
+                                ?
+                            </button>
                         </div>
+
+                        <!-- Subsections -->
+                        <div class="mb-3 reporting-area-subsections" id="subsections_{{ area.name | replace(' ', '_') }}" style="display: none;">
+                            <label class="form-label"><strong>Subsections:</strong></label>
+                            {% for subsection in area.subsections %}
+                                <div class="form-check position-relative">
+                                    <input type="checkbox" class="form-check-input"
+                                           id="subsection_{{ subsection.name | replace(' ', '_') }}"
+                                           name="criteria_subsections"
+                                           value="{{ subsection.name }}"
+                                           {% if subsection.name in project_criteria_answers.get("subsections", []) %}checked{% endif %}>
+                                    <label class="form-check-label" for="subsection_{{ subsection.name | replace(' ', '_') }}">
+                                        {{ subsection.name }}
+                                    </label>
+                                    <!-- Question Mark Button -->
+                                    <button type="button" class="btn btn-sm btn-outline-info"
+                                            data-bs-toggle="modal" data-bs-target="#infoModal"
+                                            data-title="{{ subsection.name }}" data-description="{{ subsection.description }}">
+                                        ?
+                                    </button>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <hr style="width: 80%; margin: auto; border: 3px solid var(--ae-lightgreen);">
                     {% endfor %}
-                <button type="submit" class="btn btn-primary">Save and Continue</button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="infoModalLabel">Information</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 id="modalTitle"></h5>
+                                <p id="modalDescription"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Criteria -->
+                {% for criterion in criteria if criterion.name != "reporting_area" and criterion.name != "subsections" %}
+                    <div class="mb-3">
+                        <label for="criteria_{{ criterion.name }}" class="form-label d-flex align-items-center">
+                            <strong>{{ criterion.name.replace('_', ' ').capitalize() }}</strong>
+                            <!-- Question Mark Button -->
+                            <button type="button" class="btn btn-sm btn-outline-info ms-2"
+                                    data-bs-toggle="modal" data-bs-target="#infoModal"
+                                    data-title="{{ criterion.name.replace('_', ' ').capitalize() }}"
+                                    data-description="
+                                        {% for key, value in criteria_descriptions[criterion.name].items() %}
+                                        <strong>{{ key.replace('_', ' ').capitalize() }}:</strong> {{ value }}<br>
+                                        {% endfor %}
+                                    ">
+                                ?
+                            </button>
+                        </label>
+                        <select name="criteria_{{ criterion.name }}" id="criteria_{{ criterion.name }}" class="form-select" required>
+                            {% for option in criterion.options %}
+                                <option value="{{ option }}"
+                                    {% if project_criteria_answers.get(criterion.name) == option %}selected{% endif %}>
+                                    {{ option }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                {% endfor %}
+
+                <!-- Save Button -->
+                <button type="submit" class="btn btn-primary mt-3">
+                    Save and Continue
+                </button>
             </form>
         </div>
     </div>
 </div>
 
-<!-- script for making the name-editing button-->
 <script>
-    document.getElementById('toggleNameEdit').addEventListener('click', function() {
+    document.getElementById('toggleNameEdit').addEventListener('click', function () {
         const projectNameInput = document.getElementById('project_name');
-        projectNameInput.readOnly = false; // Enable editing of the project name
-
-        // Remove the button from the DOM
+        projectNameInput.readOnly = false;
         this.parentNode.removeChild(this);
     });
-</script>
 
+    // Show/hide subsections dynamically
+    const checkboxes = document.querySelectorAll("[id^='reportingArea_']");
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            const divId = "subsections_" + checkbox.id.replace("reportingArea_", "");
+            const subsectionDiv = document.getElementById(divId);
+            if (checkbox.checked) {
+                subsectionDiv.style.display = "block";
+            } else {
+                subsectionDiv.style.display = "none";
+                const checkboxes = subsectionDiv.querySelectorAll("input[type='checkbox']");
+                checkboxes.forEach(cb => cb.checked = false);
+            }
+        });
+
+        if (checkbox.checked) {
+            const divId = "subsections_" + checkbox.id.replace("reportingArea_", "");
+            document.getElementById(divId).style.display = "block";
+        }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const infoModal = document.getElementById("infoModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        infoModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget; // Button that triggered the modal
+            const title = button.getAttribute("data-title");
+            const description = button.getAttribute("data-description");
+
+            // Update modal content
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const infoModal = document.getElementById("infoModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        infoModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget; // Button that triggered the modal
+            const title = button.getAttribute("data-title");
+            const description = button.getAttribute("data-description");
+
+            // Update modal content
+            modalTitle.textContent = title;
+            modalDescription.innerHTML = description; // Use innerHTML to render HTML content
+        });
+    });
+    document.querySelector("form").addEventListener("submit", function (event) {
+        const reportingAreaCheckboxes = document.querySelectorAll("[id^='reportingArea_']");
+        let isValid = true;
+        let errorMessages = [];
+
+        // Check if at least one reporting area is selected
+        const selectedAreas = Array.from(reportingAreaCheckboxes).filter(checkbox => checkbox.checked);
+        if (selectedAreas.length === 0) {
+            isValid = false;
+            errorMessages.push("Please select at least one reporting area.");
+        } else {
+            // Check if at least one subsection is selected for each selected reporting area
+            selectedAreas.forEach(areaCheckbox => {
+                const divId = "subsections_" + areaCheckbox.id.replace("reportingArea_", "");
+                const subsectionDiv = document.getElementById(divId);
+                const selectedSubsections = Array.from(
+                    subsectionDiv.querySelectorAll("input[type='checkbox']")
+                ).filter(checkbox => checkbox.checked);
+
+                if (selectedSubsections.length === 0) {
+                    isValid = false;
+                    const areaName = areaCheckbox.nextElementSibling.textContent.trim();
+                    errorMessages.push(`Please select at least one subsection for '${areaName}'.`);
+                }
+            });
+        }
+
+        // Prevent form submission and display error messages
+        if (!isValid) {
+            event.preventDefault();
+            const errorContainer = document.createElement("div");
+            errorContainer.className = "alert alert-danger mt-3";
+            errorContainer.innerHTML = errorMessages.join("<br>");
+            const form = event.target;
+            const existingErrorContainer = form.querySelector(".alert.alert-danger");
+            if (existingErrorContainer) {
+                existingErrorContainer.remove();
+            }
+            form.prepend(errorContainer);
+            window.scrollTo(0, 0); // Scroll to top to show the error messages
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Add event listeners to all reporting area checkboxes
+    const reportingAreaCheckboxes = document.querySelectorAll("[id^='reportingArea_']");
+    reportingAreaCheckboxes.forEach(reportingAreaCheckbox => {
+        reportingAreaCheckbox.addEventListener("change", function () {
+            // Get the ID of the subsection container for this reporting area
+            const divId = "subsections_" + reportingAreaCheckbox.id.replace("reportingArea_", "");
+            const subsectionDiv = document.getElementById(divId);
+
+            // Get all checkboxes inside the subsection container
+            const subsectionCheckboxes = subsectionDiv.querySelectorAll("input[type='checkbox']");
+
+            // Set the state of all subsection checkboxes based on the reporting area checkbox
+            subsectionCheckboxes.forEach(subsectionCheckbox => {
+                subsectionCheckbox.checked = reportingAreaCheckbox.checked;
+            });
+
+            // Show or hide the subsection container based on the reporting area checkbox
+            subsectionDiv.style.display = reportingAreaCheckbox.checked ? "block" : "none";
+        });
+
+        // On page load, ensure the subsections are shown or hidden correctly
+        if (reportingAreaCheckbox.checked) {
+            const divId = "subsections_" + reportingAreaCheckbox.id.replace("reportingArea_", "");
+            const subsectionDiv = document.getElementById(divId);
+            subsectionDiv.style.display = "block";
+        }
+    });
+});
+
+</script>
 {% endblock %}

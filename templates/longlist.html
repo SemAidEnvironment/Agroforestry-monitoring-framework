@@ -3,39 +3,213 @@
 {% block title %}Longlist of Techniques{% endblock %}
 
 {% block content %}
+<style>
+    .pros-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .pros-list li::before {
+        content: "+ ";
+        color: green;
+        font-weight: bold;
+    }
+    .cons-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .cons-list li::before {
+        content: "- ";
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
 <div class="container">
     <h2>Longlist of Techniques</h2>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} mt-4" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <!-- Display alert if no techniques fit the criteria -->
-    {% if not fitting_techniques %}
+    {% if not fitting_methods %}
         <div class="alert alert-warning mt-4" role="alert">
             No techniques fit with the currently selected conditions.
         </div>
     {% endif %}
 
+    <!-- Single form for all sections -->
     <form method="POST" id="techniqueForm">
+            <button type="submit" class="btn btn-primary mt-3">Finalize Selection</button>
         <!-- Fitting Techniques Section -->
-        {% if fitting_techniques %}
+        {% if fitting_methods %}
             <h4>Available Techniques</h4>
             <div class="row mb-3">
-                {% for technique in fitting_techniques %}
-                    <div class="col-md-4">
-                        <div class="card technique-card {% if technique.technique_name in selected_techniques %}highlighted{% endif %}" id="technique-card-{{ loop.index }}">
+                {% for technique in fitting_methods %}
+                    <div class="col-md-3">
+                        <div class="card technique-card {% if technique.name in selected_methods %}highlighted{% endif %}" id="technique-card-{{ loop.index }}">
                             <div class="card-header">
                                 <div class="form-check">
-                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique" value="{{ technique.technique_name }}"
-                                           id="technique{{ loop.index }}" {% if technique.technique_name in selected_techniques %}checked{% endif %}>
+                                    <input
+                                        class="form-check-input technique-checkbox"
+                                        type="checkbox"
+                                        name="technique"
+                                        value="{{ technique.name }}"
+                                        id="technique{{ loop.index }}"
+                                        {% if technique.name in selected_methods %}checked{% endif %}
+                                    >
                                     <label class="form-check-label" for="technique{{ loop.index }}">
-                                        {{ technique.technique_name }}
+                                        {{ technique.name }}
                                     </label>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <button class="btn btn-link text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#fittingCollapse{{ loop.index }}" aria-expanded="false" aria-controls="fittingCollapse{{ loop.index }}">
-                                    More Details
+                                <button class="btn btn-link text-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#fittingCollapse{{ loop.index }}" aria-expanded="false"
+                                        aria-controls="fittingCollapse{{ loop.index }}">
+                                    More details
                                 </button>
                                 <div id="fittingCollapse{{ loop.index }}" class="collapse">
-                                    <p class="text-muted">{{ technique.description }}</p>
+                                    <p><strong>Description:</strong> {{ technique.description }}</p>
+
+                                    <!-- Phase of Project -->
+                                    <p><strong>Phase of Project:</strong>
+                                        {{ technique.phase_of_project.levels | join(', ') }}
+                                        {% if technique.phase_of_project.extra_information %}
+                                            <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#phaseExtraInfo{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="phaseExtraInfo{{ loop.index }}">
+                                                Additional Information
+                                            </button>
+                                            <div id="phaseExtraInfo{{ loop.index }}" class="collapse mt-2">
+                                                <p>{{ technique.phase_of_project.extra_information }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </p>
+
+                                    <!-- Budget -->
+                                    <p><strong>Budget:</strong>
+                                        {{ technique.budget.levels | join(', ') }}
+                                        {% if technique.budget.extra_information %}
+                                            <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#budgetExtraInfo{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="budgetExtraInfo{{ loop.index }}">
+                                                Additional Information
+                                            </button>
+                                            <div id="budgetExtraInfo{{ loop.index }}" class="collapse mt-2">
+                                                <p>{{ technique.budget.extra_information }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </p>
+
+                                    <!-- Skills Required -->
+                                    <p><strong>Skills Required:</strong>
+                                        {{ technique.skills_required.levels | join(', ') }}
+                                        {% if technique.skills_required.extra_information %}
+                                            <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#skillsExtraInfo{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="skillsExtraInfo{{ loop.index }}">
+                                                Additional Information
+                                            </button>
+                                            <div id="skillsExtraInfo{{ loop.index }}" class="collapse mt-2">
+                                                <p>{{ technique.skills_required.extra_information }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </p>
+
+                                    <!-- Resource Intensive -->
+                                    <p><strong>Resource Intensive:</strong>
+                                        {{ technique.resource_intensive.levels | join(', ') }}
+                                        {% if technique.resource_intensive.extra_information %}
+                                            <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#resourceExtraInfo{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="resourceExtraInfo{{ loop.index }}">
+                                                Additional Information
+                                            </button>
+                                            <div id="resourceExtraInfo{{ loop.index }}" class="collapse mt-2">
+                                                <p>{{ technique.resource_intensive.extra_information }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </p>
+
+                                    <!-- Costs -->
+                                    <p><strong>Costs:</strong>
+                                        {{ technique.costs.levels | join(', ') }}
+                                        {% if technique.costs.extra_information %}
+                                            <button class="btn btn-sm btn-secondary" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#costsExtraInfo{{ loop.index }}" aria-expanded="false"
+                                                    aria-controls="costsExtraInfo{{ loop.index }}">
+                                                Additional Information
+                                            </button>
+                                            <div id="costsExtraInfo{{ loop.index }}" class="collapse mt-2">
+                                                <p>{{ technique.costs.extra_information }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </p>
+
+                                    <!-- Pros -->
+                                    {% if technique.pros %}
+                                        <p><strong>Pros:</strong></p>
+                                        <ul class="pros-list">
+                                            {% for pro in technique.pros %}
+                                                <li>{{ pro }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                                    <!-- Cons -->
+                                    {% if technique.cons %}
+                                        <p><strong>Cons:</strong></p>
+                                        <ul class="cons-list">
+                                            {% for con in technique.cons %}
+                                                <li>{{ con }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                                    <!-- Additional Information -->
+                                    {% if technique.extra_information %}
+                                        <p><strong>Additional Information:</strong> {{ technique.extra_information }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <!-- Beyond Capacity Section -->
+        {% if beyond_capacity_methods %}
+            <h4 class="mt-4 text-warning">Techniques below your current capacity</h4>
+            <div class="row mb-4">
+                {% for technique in beyond_capacity_methods %}
+                    <div class="col-md-3">
+                        <div class="card technique-card" id="beyondCapacityTechnique{{ loop.index }}">
+                            <div class="card-header">
+                                <div class="form-check">
+                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique"
+                                           value="{{ technique.name }}" id="beyondCapacityCheckbox{{ loop.index }}"
+                                           {% if technique.name in selected_methods %}checked{% endif %}>
+                                    <label class="form-check-label" for="beyondCapacityCheckbox{{ loop.index }}">
+                                        {{ technique.name }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <button class="btn btn-link text-warning" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#beyondCapacityCollapse{{ loop.index }}" aria-expanded="false"
+                                        aria-controls="beyondCapacityCollapse{{ loop.index }}">
+                                    More Details
+                                </button>
+                                <div id="beyondCapacityCollapse{{ loop.index }}" class="collapse">
+                                    <p><strong>Description:</strong> {{ technique.description }}</p>
+                                    <p><strong>Reason:</strong> This technique exceeds your current capacity in some criteria.</p>
                                 </div>
                             </div>
                         </div>
@@ -45,27 +219,30 @@
         {% endif %}
 
         <!-- Non-Fitting Selected Techniques Section -->
-        {% if non_fitting_selected_techniques %}
+        {% if non_fitting_selected_methods %}
             <h4 class="mt-4 text-danger">Selected Techniques That No Longer Fit</h4>
             <div class="row mb-4">
-                {% for technique in non_fitting_selected_techniques %}
-                    <div class="col-md-4">
-                        <div class="card technique-card non-fitting {% if technique.technique_name in selected_techniques %}highlighted{% endif %}" id="nonFittingTechnique{{ loop.index }}">
+                {% for technique in non_fitting_selected_methods %}
+                    <div class="col-md-3">
+                        <div class="card technique-card non-fitting highlighted" id="nonFittingTechnique{{ loop.index }}">
                             <div class="card-header">
                                 <div class="form-check">
-                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique" value="{{ technique.technique_name }}"
-                                           id="nonFittingTechniqueCheckbox{{ loop.index }}" checked>
+                                    <input class="form-check-input technique-checkbox" type="checkbox" name="technique"
+                                           value="{{ technique.name }}" id="nonFittingTechniqueCheckbox{{ loop.index }}" checked>
                                     <label class="form-check-label" for="nonFittingTechniqueCheckbox{{ loop.index }}">
-                                        {{ technique.technique_name }}
+                                        {{ technique.name }}
                                     </label>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <button class="btn btn-link text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#nonFittingCollapse{{ loop.index }}" aria-expanded="false" aria-controls="nonFittingCollapse{{ loop.index }}">
+                                <button class="btn btn-link text-danger" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#nonFittingCollapse{{ loop.index }}" aria-expanded="false"
+                                        aria-controls="nonFittingCollapse{{ loop.index }}">
                                     More Details
                                 </button>
                                 <div id="nonFittingCollapse{{ loop.index }}" class="collapse">
-                                    <p class="text-muted">{{ technique.description }}</p>
+                                    <p><strong>Description:</strong> {{ technique.description }}</p>
+                                    <p><strong>Reason:</strong> {{ reasons[technique.name] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -74,11 +251,10 @@
             </div>
         {% endif %}
 
-        <button type="submit" class="btn btn-primary mt-3">Finalize Selection</button>
+        <!-- Finalize Selection Button -->
     </form>
 </div>
 
-<!-- JavaScript to handle checkbox change and apply highlighting -->
 <script>
     document.querySelectorAll('.technique-checkbox').forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
@@ -90,7 +266,6 @@
             }
         });
 
-        // Initial check to highlight pre-checked boxes
         if (checkbox.checked) {
             checkbox.closest('.technique-card').classList.add('highlighted');
         }

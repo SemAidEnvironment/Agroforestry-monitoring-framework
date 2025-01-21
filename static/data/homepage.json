@@ -1,0 +1,39 @@
+{
+    "title": "Regenerative Tropical Agroforestry: A framework and toolbox for the SDGP program",
+    "subtitle": "Inspiring you to monitor the impact that regenerative tropical agroforestry has on your project",
+    "features": {
+        "personalizedRecommendations": "Receive tailored suggestions based on your specific project goals.",
+        "comprehensiveMonitoring": "Track and assess the impact of agroforestry in your project goals with a range of tools and techniques.",
+        "dataDrivenInsights": "Leverage data insights to enhance project outcomes and impact."
+    },
+    "accordion": {
+        "section1": {
+            "title": "What is the Regenerative Agroforestry Framework and Toolbox?",
+            "body": "<p>The Regenerative Agroforestry Framework and Toolbox serves as a comprehensive guide for program managers, M&E (Monitoring and Evaluation) experts, and project teams within the SDGP program. It is designed to help organizations capture the full landscape-level impact of their agroforestry projects.</p><p>Monitoring the multifaceted benefits of agroforestry can be challenging, especially when trying to combine ecological, socioeconomic, and productivity data. This toolbox offers robust tools to overcome this complexity, ensuring that your project is well-equipped to measure progress and impact effectively.</p><p>The toolbox is structured to help you develop robust monitoring systems that align with RVO guidelines, focusing on the key reporting areas required by RVO. It provides general guidance on selecting the right indicators and methodologies to measure how different aspects of agroforestry contribute to each reporting area, including biodiversity, soil health, water retention, carbon sequestration, and community resilience.</p>"
+        },
+        "section2": {
+            "title": "Why is gathering evidence important?",
+            "body": "<p>Organizations often face the challenge of fully capturing the landscape-level impacts of agroforestry projects. Gathering comprehensive evidence is essential for several reasons:</p><ul><li><strong>Understanding the full impact story:</strong> It is crucial to assess not only immediate outcomes but also the long-term benefits that agroforestry brings to ecosystems, livelihoods, and communities.</li><li><strong>Scaling up your efforts:</strong> Gathering high-quality evidence enables you to demonstrate success, attract additional funding, and expand the reach of your project.</li><li><strong>Comprehensive progress reporting:</strong> Current methods of reporting often focus on high-level indicators. To understand the broader impact, a more detailed, multi-faceted approach is necessary.</li></ul><p>However, choosing the right monitoring methods to provide an overview of progress and impact, considering both physical and socioeconomic factors, can be complex. The toolbox offers practical guidance to help you select appropriate monitoring tools, ensuring your data collection is comprehensive and accurate.</p>"
+        },
+        "section3": {
+            "title": "A tailored approach to monitoring",
+            "body": "<p>The Regenerative Agroforestry Toolbox provides general guidelines that are adaptable to each project’s specific needs. It acknowledges that every project may face unique constraints that influence the selection of indicators, monitoring methods, and focus areas.</p><p>While the toolbox demonstrates proof of concept and provides a comprehensive structure, it is important to note that monitoring strategies should be tailored to each project. The toolbox offers the flexibility to adapt its methodologies and monitoring techniques to local contexts and specific project goals. For more tailored advice on adapting the guidelines and developing customized questionnaires, AidEnvironment is available to assist.</p>"
+        },
+        "section4": {
+            "title": "What is agroforestry? Why regenerative agroforestry?",
+            "body": "<p>Agroforestry combines agriculture and forestry by integrating trees and shrubs into crop and livestock systems. This approach not only enhances biodiversity and improves soil health but also diversifies income for farmers through the production of fruits, nuts, timber, and other tree-based products. Agroforestry systems can reduce risks associated with crop failures, improve food security, and contribute to community resilience by creating more stable and diversified livelihoods. The integration of trees helps to reduce erosion, improve water retention, and create microclimates that can protect crops, leading to better yields and long-term sustainability.</p><p>Regenerative agroforestry goes a step further, focusing on restoring and revitalizing ecosystems. It emphasizes practices that rebuild soil health, sequester carbon, and increase biodiversity, with the goal of regenerating the land rather than just sustaining it. This approach often includes planting diverse native species, avoiding synthetic chemicals, and enhancing natural nutrient cycles, resulting in a resilient, self-sustaining ecosystem.</p><p>Beyond ecological benefits, regenerative tropical agroforestry also promotes long-term economic stability for farmers by improving soil fertility, reducing input costs, and increasing productivity over time. It can lead to profound community changes by fostering stronger connections to the land, improving livelihoods, and driving social and economic development in rural areas.</p>"
+        }
+    },
+    "logos": {
+        "rvo": {
+            "src": "static/images/logo/rvo.png",
+            "alt": "RVO Logo",
+            "description": "This tool is commissioned by the Netherlands Enterprise Agency (Rijksdienst voor Ondernemend Nederland). It operates under the Dutch Ministry of Economic Affairs and Climate Policy and supports businesses, entrepreneurs, and public sector organizations in areas such as sustainability, innovation, and international business. RVO provides funding, expertise, and tools to help implement projects that contribute to economic growth and sustainable development, both in the Netherlands and internationally."
+        },
+        "aidEnvironment": {
+            "src": "static/images/logo/AE_FullLogo-Primary-Teal.png",
+            "alt": "AE Logo",
+            "description": "Developed by AE - AidEnvironment is a not-for-profit sustainability research, strategy and implementation organization working to achieve transformative sector change. We produce actionable insights and implement sustainable solutions to help protect and restore ecosystems and improve livelihoods in agricultural and forest landscapes across Asia, Africa and Latin America."
+        }
+    }
+}

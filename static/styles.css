@@ -125,4 +125,10 @@ footer {
     color: #666;
     font-size: 0.9rem;
 }
-
+:root {
+  --ae-darkblue: #087880; /* Deep water primary */
+  --ae-lightgreen: #C2ED45; /* Jungle primary */
+  --ae-lightblue: #4FD4C7; /* Aqua primary*/
+  --ae-green: #36C726;/* Land primary */
+  --ae-yellow: #FEE327;/* Sun primary */
+}

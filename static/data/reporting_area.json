@@ -1,0 +1,2031 @@
+{
+  "reporting_areas": [
+    {
+      "name": "Climate Resilient Food Production Systems",
+      "description": "Agroforestry enhances the resilience of food production systems by improving soil health, reducing erosion, and increasing water retention. The integration of trees with crops helps stabilize microclimates, providing shade and reducing temperature extremes, which is critical in the face of climate change. By fostering biodiversity, agroforestry systems create more resilient ecosystems that can better withstand pests, diseases, and environmental stresses. The diversified nature of agroforestry also ensures that if one crop fails due to climate impacts, others may still thrive, maintaining food security and sustained income for farmers. Additionally, agroforestry contributes to carbon sequestration and supports vital ecosystem services, such as water regulation and habitat creation, further enhancing the overall resilience of food production systems.",
+      "subsections": [
+        {
+          "name": "Area Under Agroecological/Sustainable Farming Practices",
+          "description": "This refers to the land area dedicated to farming practices that prioritize ecological balance, sustainability, and long-term productivity, minimizing environmental impact. Regenerative agroforestry supports the expansion of agroecological and sustainable farming practices by integrating trees, crops, and livestock in a way that enhances soil fertility, biodiversity, and water management. These systems reduce reliance on chemical inputs and promote natural pest control, leading to more resilient farming systems. By improving soil health and enhancing ecological processes, agroforestry practices help increase the area under sustainable agriculture, contributing to long-term environmental and economic sustainability.",
+          "indicators": [],
+          "methods": [
+            {
+              "name": "GIS (Geographic Information Systems) Mapping",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline Assessment",
+                  "Monitoring & Evaluation",
+                  "End-baseline assessment"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "Medium",
+                  "High"
+                ],
+                "extra_information": "Depends on tools and software"
+              },
+              "skills_required": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": "GIS analyst, spatial data expertise"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": "Requires both technical tools and skilled analysts"
+              },
+              "costs": {
+                "levels": [
+                  "Medium",
+                  "High"
+                ],
+                "extra_information": "Software licenses, data storage, training (if specialized staff is not already part of the organization)"
+              },
+              "description": "GIS mapping is used to create spatial maps of sustainable farming practices. Data is gathered from field surveys, remote sensing, or apps, then processed in GIS software to visualize land use and track changes. Areas can be calculated based on the maps created.",
+              "pros": [
+                "Highly visual and accurate",
+                "Integrates with multiple data sources",
+                "Allows for in-depth spatial analysis over time"
+              ],
+              "cons": [
+                "Requires expensive software and skilled personnel",
+                "Setup can be time-consuming"
+              ],
+              "photo": "Available"
+            },
+            {
+              "name": "Field Surveys",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline Assessment",
+                  "Monitoring and Evaluation",
+                  "End-evaluation"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "Low",
+                  "Medium"
+                ],
+                "extra_information": "Costs depend on sample size and area"
+              },
+              "skills_required": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": "Survey design, data collection, analysis"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": "Especially for large areas and remote locations"
+              },
+              "costs": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": "Transportation, data entry tools (e.g., tablets, notebooks), personnel for surveys"
+              },
+              "description": "Field surveys involve on-the-ground visits where surveyors record information on sustainable practices and farm size or restored areas. Surveyors may also record GPS data or plot boundaries to map farming areas. If the boundaries cannot be recorded, extrapolation (based on farm size or restored plots) can also be used to estimate the total area under sustainable/restoration practices.",
+              "pros": [
+                "Direct interaction with farmers",
+                "Accurate, detailed data",
+                "Qualitative insights possible"
+              ],
+              "cons": [
+                "Labor-intensive",
+                "May be challenging in remote areas",
+                "Prone to data entry errors"
+              ],
+              "photo": "Available"
+            }
+          ]
+        },
+        {
+          "name": "Soil Health",
+          "description": "Soil health refers to the capacity of soil to function as a living ecosystem that sustains plants, animals, and humans. It involves maintaining a balance of organic matter, nutrients, and microorganisms, which together support robust plant growth, efficient water absorption, and resilience against pests and diseases. Healthy soil is critical for productive farming and plays a significant role in carbon sequestration, water filtration, and reducing erosion.",
+          "indicators": [
+            {
+              "name": "Use of Synthetic Pesticides",
+              "description": "The use of synthetic pesticides involves applying chemically produced substances to control pests like insects, weeds, and fungi. While effective in boosting crop yields, they can harm the environment, contaminate soil and water, and pose health risks to humans and wildlife. Overuse can also lead to pest resistance. In regenerative agroforestry, the goal is to minimize or avoid both synthetic and organic pesticides, favoring natural pest control methods, enhancing biodiversity, and maintaining ecosystem balance. Organic pesticides may be used as a last resort but should be applied sparingly to ensure sustainability."
+            },
+            {
+              "name": "Use of Chemical Fertilizers",
+              "description": "The use of chemical fertilizers involves applying synthetically produced substances to supply essential nutrients like nitrogen, phosphorus, and potassium to crops. While they can boost crop yields in the short term, overuse can degrade soil health, pollute water sources, and contribute to greenhouse gas emissions. In regenerative agroforestry, the aim is to minimize or avoid chemical fertilizers by focusing on natural soil fertility methods, such as composting, cover cropping, and agroecological practices. When necessary, organic fertilizers may be used, but the emphasis remains on rebuilding soil health and promoting long-term sustainability."
+            },
+            {
+              "name": "Chemical Soil Properties",
+              "description": "Refers to the chemical composition of the soil, including its nutrient content, pH, electroconductivity (EC), cation exchange capacity (CEC), and the presence of organic matter or contaminants. These properties are crucial for soil health because they affect nutrient availability, soil fertility, and the ability of plants to grow.",
+              "sub_indicators": [
+                {
+                  "name": "pH",
+                  "description": "pH refers to the acidity or alkalinity of the soil, measured on a scale from 0 to 14, with 7 being neutral. It is important for soil health because it affects nutrient availability, microbial activity, and overall plant growth. Soils that are too acidic or too alkaline can limit nutrient uptake, leading to poor plant health. In regenerative agroforestry, measuring pH helps ensure optimal soil conditions for healthy plant growth, enhances nutrient cycling, and supports a balanced ecosystem by guiding appropriate soil management practices."
+                },
+                {
+                  "name": "Electroconductivity",
+                  "description": "Electroconductivity (EC) measures the soil’s ability to conduct an electrical current, which is influenced by the concentration of soluble salts in the soil. It is important for soil health because high EC can indicate excessive salinity, which can harm plant growth by limiting water uptake. Low EC may suggest a lack of nutrients. In regenerative agroforestry, measuring EC helps assess soil fertility, guide irrigation practices, and ensure that the soil maintains a balance of nutrients without salinity build-up, supporting sustainable plant growth and ecosystem health."
+                },
+                {
+                  "name": "Organic content",
+                  "description": "refers to the amount of organic carbon stored in the soil, primarily in the form of roots, decomposed plant material, and soil microorganisms. It is important for soil health because organic carbon helps improve soil structure, water retention, and nutrient availability, while also supporting soil microbial activity. High organic carbon content enhances soil fertility and carbon sequestration, which is critical for combating climate change. In regenerative agroforestry, measuring below-ground organic carbon helps assess soil health, guide carbon management practices, and monitor the long-term sustainability of agroforestry systems."
+                },
+                {
+                  "name": "Soil content in macronutrients NPK",
+                  "description": "Soil content in macronutrients refers to the levels of essential nutrients like nitrogen (N), phosphorus (P), potassium (K), calcium (Ca), magnesium (Mg), and sulfur (S), which are needed in large amounts for plant growth. These nutrients are vital for processes such as leaf growth, root development, and overall plant health. In regenerative agroforestry, measuring macronutrient content helps optimize soil fertility and support sustainable growth, reducing the need for synthetic fertilizers."
+                }
+                ]
+            },
+            {
+              "name": "Physical Soil Properties",
+              "description": "refer to the characteristics of the soil that influence its structure, texture, and ability to retain water and nutrients. These include soil texture, bulk density, porosity, soil structure, water holding capacity, etc. These properties are important for plant growth as they affect water infiltration, root development, and nutrient availability. In regenerative agroforestry, understanding physical soil properties helps manage soil health, reduce erosion, and improve water retention, supporting sustainable and resilient agroecosystems.",
+              "sub_indicators": [
+                {
+                  "name": "Bulk Density - porosity",
+                  "description": "Bulk density is the mass of soil per unit volume, indicating soil compaction. High bulk density suggests compacted soil, which can restrict root growth and water movement, while low bulk density indicates well-aerated soil. In regenerative agroforestry, measuring bulk density helps manage soil health, compaction, and support root development"
+                },
+                {
+                  "name": "Water Infiltration",
+                  "description": "Water infiltration refers to the rate at which water enters and moves through the soil. It is influenced by soil texture, structure, and compaction. High infiltration rates allow water to penetrate the soil quickly, benefiting plant roots, while low rates can lead to water runoff and erosion. In regenerative agroforestry, measuring water infiltration helps assess soil health, manage water retention, and reduce erosion, ensuring sustainable soil moisture for plant growth."
+                },
+                {
+                  "name": "Aggregate Stability",
+                  "description": "Aggregate stability refers to the ability of soil particles to bind together into clumps or aggregates, which helps improve soil structure. Stable aggregates allow for better water infiltration, root penetration, and aeration, while preventing erosion. In regenerative agroforestry, measuring aggregate stability helps assess soil health, manage erosion risks, and promote better water retention and root growth, supporting sustainable and resilient agroecosystems."
+                }
+              ]
+            },
+            {
+              "name": "Biological Soil Properties",
+              "description": "refer to the presence and activity of soil organisms, such as microbes, fungi, and soil fauna, that play a key role in nutrient cycling, organic matter decomposition, and soil structure formation. These properties include: microbial activity, soil fauna, biodiversity in the soil. In regenerative agroforestry, healthy biological properties enhance soil fertility, improve water retention, and support plant growth by promoting nutrient cycling and organic matter breakdown, contributing to sustainable soil health and ecosystem resilience.",
+              "sub_indicators": [
+                {
+                  "name": "Microbial Activity",
+                  "description": "presence of mycorrhizae and soil biological activity - refers to the activities of microorganisms such as bacteria, fungi, and algae that break down organic matter, recycle nutrients and contribute to soil fertility. These microbes play a vital role in processes like nitrogen fixation, decomposition, and the breakdown of organic matter into plant-available nutrients. In regenerative agroforestry, monitoring microbial activity helps assess soil health, as a thriving microbial community improves soil structure, nutrient cycling, and overall ecosystem sustainability, promoting better plant growth and resilience."
+                },
+                {
+                  "name": "Presence of Macrofauna",
+                  "description": "refers to the abundance and diversity of larger soil organisms, such as earthworms, insects, ants, and other invertebrates, that are visible to the naked eye. These organisms play a key role in aerating the soil, improving its structure, enhancing nutrient cycling, and breaking down organic matter. In regenerative agroforestry, monitoring the presence of soil macrofauna helps assess soil health, as a diverse and abundant macrofauna population indicates good soil structure, fertility, and overall ecosystem function, which supports sustainable plant growth and resilience."
+                }
+              ]
+            }
+          ],
+            "methods": [
+              {
+                "name": "Visual Soil Assessment (VSA)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Requires minimal materials such as a guidebook or printed checklist"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Includes knowledge of color, texture, and plant growth patterns. Tailored guides like FAO's Visual Soil Assessment protocols can assist."
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": "Requires manual observation only"
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": "No specialized tools or equipment needed"
+                },
+                "description": "VSA evaluates soil health by observing visual indicators like soil color, structure, plant growth patterns, and salinity effects (e.g., white crusts).",
+                "pros": [
+                  "Inexpensive and requires no technical equipment",
+                  "Quickly conduct in the field",
+                  "Encourages farmer participation and awareness"
+                ],
+                "cons": [
+                  "Subjective and dependent on observer expertise",
+                  "Limited quantitative or detailed data",
+                  "May overlook subtle or chemical-specific issues"
+                ]
+              },
+              {
+                "name": "pH Strips / Indicator Solutions",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Mid-term Evaluations", "Endline"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Test strips or solutions are affordable"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic ability to read colorimetric results"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": "Minimal preparation or analysis needed"
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": "Test kits available at low cost"
+                },
+                "description": "pH test strips or liquid indicator solutions provide a rough pH measurement based on color changes when soil is mixed with water.",
+                "pros": [
+                  "Simple to use with minimal training",
+                  "Affordable and accessible"
+                ],
+                "cons": [
+                  "Low precision compared to digital or lab methods",
+                  "Subject to user interpretation errors"
+                ]
+              },
+              {
+                "name": "Portable pH Meters",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium"],
+                  "extra_information": "Initial cost for devices and calibration solutions"
+                },
+                "skills_required": {
+                  "levels": ["Low"],
+                  "extra_information": "Required to operate and calibrate the meter"
+                },
+                "resource_intensive": {
+                  "levels": ["Low", "Medium"],
+                  "extra_information": "Requires calibration and proper handling"
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": "Depends on device quality"
+                },
+                "description": "Digital pH meters directly measure soil pH when probes are inserted into a soil-water mixture.",
+                "pros": [
+                  "Quick and relatively accurate",
+                  "Reusable for multiple samples"
+                ],
+                "cons": [
+                  "Requires regular calibration and maintenance",
+                  "The initial cost is higher than strips"
+                ]
+              },
+              {
+                "name": "Laboratory Soil Testing / Wet Soil Analysis",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "End-Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["High"],
+                  "extra_information": "Lab services and logistics costs"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Expertise in sample collection, preparation, and lab analysis interpretation"
+                },
+                "resource_intensive": {
+                  "levels": ["High"],
+                  "extra_information": "Requires trained staff, lab access, and logistics for sample transport"
+                },
+                "costs": {
+                  "levels": ["High"],
+                  "extra_information": "Cost per sample depends on the tests conducted"
+                },
+                "description": "Soil samples are analyzed in laboratories for precise measurements of pH, EC, organic carbon content, and NPK using standardized chemical laboratory analysis techniques.",
+                "pros": [
+                  "Highly accurate and reliable",
+                  "Can analyze multiple properties in one sample"
+                ],
+                "cons": [
+                  "Expensive and time-consuming",
+                  "Requires centralized lab infrastructures"
+                ]
+              },
+              {
+                "name": "IoT Sensors for Soil Properties",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["High"],
+                  "extra_information": "Device costs, installation, and data infrastructure"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Needed for setup, calibration, and maintenance"
+                },
+                "resource_intensive": {
+                  "levels": ["High"],
+                  "extra_information": "Requires ongoing maintenance and connectivity"
+                },
+                "costs": {
+                  "levels": ["High"],
+                  "extra_information": "Includes equipment, connectivity, and data management"
+                },
+                "description": "IoT sensors measure soil parameters such as pH, EC, organic carbon, and NPK in real time, transmitting data for analysis via wireless networks.",
+                "pros": [
+                  "Provides continuous, automated monitoring",
+                  "Scalable for precision farming"
+                ],
+                "cons": [
+                  "High initial investment and maintenance costs",
+                  "Requires stable network infrastructure"
+                ]
+              },
+              {
+                "name": "Soil Spectrometry",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "End-Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Depends on equipment costs and accessibility to spectral analysis tools"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Expertise in spectrometry, soil chemistry, and data interpretation"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Requires specialized equipment and trained personnel"
+                },
+                "costs": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Equipment and software costs, calibration, and occasional lab validation"
+                },
+                "description": "Soil spectrometry involves analyzing soil samples using spectroscopic methods like Near Infrared (NIR) or Mid Infrared (MIR) spectroscopy. These techniques identify chemical properties (pH, organic carbon, NPK, etc.) by analyzing the soil’s light absorption/reflection patterns.",
+                "pros": [
+                  "Rapid, non-destructive analysis",
+                  "Can analyze multiple chemical properties simultaneously",
+                  "Minimal ongoing consumable costs after initial setup",
+                  "Suitable for both lab-based and portable field applications"
+                ],
+                "cons": [
+                  "High upfront costs for equipment and training",
+                  "Requires careful calibration and reference databases for accurate results",
+                  "May need complementary lab validation for uncommon soil types or outlier data"
+                ]
+              },
+              {
+                "name": "Loss on Ignition (LOI)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "End-Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low", "Medium"],
+                  "extra_information": "Dependent on access to a muffle furnace and lab space"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Required for sample preparation, weighing, and furnace operation"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium"],
+                  "extra_information": "Requires soil drying and multiple steps for analysis"
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": "Affordable equipment like a furnace, but requires consumables and infrastructure"
+                },
+                "description": "The LOI method measures soil organic carbon indirectly by weighing soil samples before and after heating them at high temperatures (usually 400–600°C). The weight loss corresponds to the organic matter content, which can be converted to approximate organic carbon levels.",
+                "pros": [
+                  "Relatively simple and cost-effective",
+                  "Does not require sophisticated instrumentation",
+                  "Provides a general estimate of organic carbon content"
+                ],
+                "cons": [
+                  "Lacks precision compared to modern analytical methods",
+                  "Cannot distinguish organic from inorganic carbon in calcareous soils",
+                  "Time-consuming for large sample volumes"
+                ]
+              },
+              {
+                "name": "Combustion Over Open Flame (Traditional LOI)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment"],
+                  "extra_information": "Informal or preliminary studies"
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Minimal equipment required"
+                },
+                "skills_required": {
+                  "levels": ["medium"],
+                  "extra_information": "Includes handling soil samples, Basic ability to conduct open-flame experiments"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": "Very simple but manual process"
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": "Virtually no specialized equipment or infrastructure needed"
+                },
+                "description": "Soil samples are heated over an open flame or basic heat source to burn off organic material. The remaining residue is weighed to estimate the organic matter content.",
+                "pros": [
+                  "Extremely low cost and accessible",
+                  "Useful for very basic, informal assessments"
+                ],
+                "cons": [
+                  "Highly imprecise and unreliable",
+                  "The risk of inconsistent heating or sample loss",
+                  "Cannot distinguish between organic and inorganic components"
+                ]
+              },
+              {
+                "name": "Colorimetric Soil Test Kits",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Kits are affordable and require minimal resources"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Based on color changes, Basic training to handle reagents and interpret results"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": "Simple setup and portable for field use"
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": "Initial cost of kits and periodic replacement of reagents"
+                },
+                "description": "Colorimetric soil test kits use chemical reagents to react with soil nutrients like nitrogen, phosphorus, and potassium (NPK). The resulting color change is matched against a reference chart to estimate nutrient levels.",
+                "pros": [
+                  "Inexpensive and portable for field use",
+                  "Quick results without advanced equipment",
+                  "Easy to train farmers or extension workers to use"
+                ],
+                "cons": [
+                  "Semi-quantitative with moderate accuracy",
+                  "Subject to interpretation errors due to lighting or user skill",
+                  "Limited reagent shelf life and sensitivity to extreme temperatures"
+                ]
+              },
+              {
+                "name": "Ion Selective Electrodes (ISE)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium"],
+                  "extra_information": "Cost of ISE sensors and calibration solutions"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Needed to operate, calibrate, and interpret ISE sensors"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium"],
+                  "extra_information": "Requires regular calibration and maintenance"
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": "Initial cost of equipment, calibration fluids, and periodic replacement of sensors"
+                },
+                "description": "Ion-Selective Electrodes detect specific ions (e.g., nitrate, ammonium, potassium) in a soil-water solution. The sensor provides a direct, quantitative measurement of nutrient concentrations.",
+                "pros": [
+                  "More precise than colorimetric methods",
+                  "Portable and field-friendly for real-time analysis",
+                  "Reusable for multiple tests"
+                ],
+                "cons": [
+                  "Requires periodic recalibration for accuracy",
+                  "Sensors may degrade over time and need replacement",
+                  "Higher upfront cost compared to simpler methods"
+                ]
+              },
+              {
+                "name": "Soil Core Sampling",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic soil sampling technique"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": "Requires manual labor and drying equipment"
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of auger and drying equipment"
+                },
+                "description": "A soil core is extracted and weighed, then dried in an oven to measure the bulk density by dividing mass by volume.",
+                "pros": [
+                  "Simple to implement",
+                  "Low cost",
+                  "Provides a clear measure of soil compaction"
+                ],
+                "cons": [
+                  "Labor-intensive",
+                  "Only measures bulk density at specific locations"
+                ]
+              },
+              {
+                "name": "Infiltrometer (Ring or Double-Ring Infiltrometer)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of rings and accessories"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic knowledge of test setup and interpretation"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "Water is added to a ring placed on the soil, and the rate of infiltration is measured over time. This indicates the soil's capacity to absorb water.",
+                "pros": [
+                  "Simple and low-cost",
+                  "Effective for basic water infiltration measurements"
+                ],
+                "cons": [
+                  "Sensitive to soil heterogeneity",
+                  "Limited to surface-level data"
+                ]
+              },
+              {
+                "name": "Automated Infiltration System (e.g., Tension Infiltrometer)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium"],
+                  "extra_information": "Cost of automated system"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Requires calibration and setup"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "description": "Uses an automated system to apply water and measure infiltration more accurately, with data logging for continuous monitoring.",
+                "pros": [
+                  "Provides more consistent and reliable data",
+                  "Allows for higher precision and greater replication"
+                ],
+                "cons": [
+                  "Higher cost",
+                  "Requires calibration and maintenance"
+                ]
+              },
+              {
+                "name": "Time Domain Reflectometry (TDR) or Neutron Probe",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["High"],
+                  "extra_information": "Cost of equipment and lab fees"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Requires technical expertise to operate"
+                },
+                "resource_intensive": {
+                  "levels": ["High"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["High"],
+                  "extra_information": null
+                },
+                "description": "Uses electromagnetic pulses to measure soil water content at various depths and monitor infiltration rates over time.",
+                "pros": [
+                  "Highly accurate and non-destructive",
+                  "Measures infiltration at multiple depths"
+                ],
+                "cons": [
+                  "Expensive equipment",
+                  "Requires professional expertise to interpret data"
+                ]
+              },
+              {
+                "name": "Wet Sieving Test",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of sieves and water"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic soil testing and sieving technique"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "Soil aggregates are immersed in water, and the breakdown of aggregates is observed by sieving them. The percentage of broken aggregates indicates stability.",
+                "pros": [
+                  "Simple and cost-effective",
+                  "Provides clear results on aggregate stability"
+                ],
+                "cons": [
+                  "Limited to surface aggregates",
+                  "Labor-intensive for larger sample sizes"
+                ]
+              },
+              {
+                "name": "Visual Erosion Assessment (Erosion Pins or Trench Surveys)",
+                "phase_of_project": {
+                  "levels": ["Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of pins or simple tools"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic field skills"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "Erosion pins or markers are placed in the soil, and the amount of erosion is measured by observing changes in pin height over time.",
+                "pros": [
+                  "Simple and inexpensive",
+                  "Effective for tracking changes over time"
+                ],
+                "cons": [
+                  "Limited to localized areas",
+                  "May not capture large-scale erosion patterns"
+                ]
+              },
+              {
+                "name": "Erosion Modeling Using GIS",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium"],
+                  "extra_information": "Cost of software and data"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Moderate GIS software skills"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "description": "Geographic Information Systems (GIS) software and spatial data are used to model potential erosion risks and estimate erosion rates across a region.",
+                "pros": [
+                  "Can cover large areas efficiently",
+                  "Allows for predictive modeling"
+                ],
+                "cons": [
+                  "Requires access to spatial data and software",
+                  "Relies on assumptions that may not always be accurate"
+                ]
+              },
+              {
+                "name": "LIDAR and Remote Sensing",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["High"],
+                  "extra_information": "Cost of LIDAR equipment and satellite data"
+                },
+                "skills_required": {
+                  "levels": ["High"],
+                  "extra_information": "Requires remote sensing expertise"
+                },
+                "resource_intensive": {
+                  "levels": ["High"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["High"],
+                  "extra_information": null
+                },
+                "description": "Light Detection and Ranging (LIDAR) and satellite imagery provide detailed topographic data to assess erosion across large areas.",
+                "pros": [
+                  "High-resolution data over large areas",
+                  "Non-invasive and provides detailed mapping"
+                ],
+                "cons": [
+                  "Very expensive",
+                  "Requires technical expertise to operate and analyze data"
+                ]
+              },
+              {
+                "name": "Soil Respiration Test (Carbon Dioxide Evolution Method)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of materials like containers and soda lime"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic lab skills"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "The soil sample is incubated in a sealed container, and the carbon dioxide (CO2) released by microbial activity is measured, typically using a simple chemical indicator.",
+                "pros": [
+                  "Simple and inexpensive",
+                  "Provides a direct measure of microbial activity"
+                ],
+                "cons": [
+                  "Limited to measuring overall microbial respiration",
+                  "Time-consuming and may not capture the full diversity of microbial activity"
+                ]
+              },
+              {
+                "name": "Visual Soil Assessment (Hand Sorting or Pitfall Traps)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": "Cost of traps and sorting tools"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Basic lab skills"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "Macrofauna (such as earthworms, beetles, and ants) are identified and counted through hand sorting of soil or by using pitfall traps placed in the field.",
+                "pros": [
+                  "Simple and inexpensive",
+                  "Provides immediate results"
+                ],
+                "cons": [
+                  "Labor-intensive",
+                  "Limited to surface-dwelling macrofauna",
+                  "Subjective depending on observer skills"
+                ]
+              },
+              {
+                "name": "Pitfall Traps with Digital Recording",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium"],
+                  "extra_information": "Cost of digital recording systems"
+                },
+                "skills_required": {
+                  "levels": ["Medium"],
+                  "extra_information": "Requires setup and monitoring of traps"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Medium"],
+                  "extra_information": null
+                },
+                "description": "Pitfall traps are set up in the field, and the collected fauna are identified and recorded digitally for more accurate identification and comparison over time.",
+                "pros": [
+                  "Can capture a variety of macrofauna",
+                  "Digital recording aids in data analysis"
+                ],
+                "cons": [
+                  "Still requires manual labor for sorting and identifying organisms",
+                  "Can be influenced by environmental factors (e.g., temperature, moisture)"
+                ]
+              },
+              {
+                "name": "Visual and Olfactory Soil Assessment (Hand Test and Smell)",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "skills_required": {
+                  "levels": ["Low"],
+                  "extra_information": "Basic observational skills"
+                },
+                "resource_intensive": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "costs": {
+                  "levels": ["Low"],
+                  "extra_information": null
+                },
+                "description": "The soil's smell and color are observed and recorded. A change in soil color may indicate different organic matter or mineral content, while smells like sourness or ammonia can indicate microbial activity or anaerobic conditions.",
+                "pros": [
+                  "Very low-cost method",
+                  "Quick and easy to perform in the field"
+                ],
+                "cons": [
+                  "Highly subjective",
+                  "Only provides general insights (does not quantify changes or conditions precisely)"
+                ]
+              },
+              {
+                "name": "Soil Chromatography",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Depending on equipment used"
+                },
+                "skills_required": {
+                  "levels": ["Moderate", "High"],
+                  "extra_information": "Requires knowledge of chemistry, laboratory equipment, and analysis"
+                },
+                "resource_intensive": {
+                  "levels": ["High"],
+                  "extra_information": "Requires specialized laboratory equipment and reagents"
+                },
+                "costs": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Cost of chromatography materials, reagents, and equipment"
+                },
+                "description": "Soil chromatography is a technique used to separate and identify the various chemical compounds in soil samples. It works by using a medium (e.g., a thin-layer or gas chromatography column) to separate different components based on their chemical properties (e.g., size, polarity, or volatility).",
+                "pros": [
+                  "Provides a highly detailed and specific analysis of soil compounds",
+                  "Useful for detecting a wide range of chemical compounds that affect soil health",
+                  "Can reveal microbial activity, organic matter quality, and contamination in the soil"
+                ],
+                "cons": [
+                  "Requires specialized lab equipment and trained personnel",
+                  "Expensive and resource-intensive, particularly for large-scale monitoring",
+                  "Limited in capturing broader soil health indicators like structure or texture"
+                ]
+              },
+              {
+                "name": "Laboratory Testing",
+                "phase_of_project": {
+                  "levels": ["Baseline Assessment", "Monitoring", "Evaluation"],
+                  "extra_information": null
+                },
+                "budget": {
+                  "levels": ["Low", "High"],
+                  "extra_information": "Varies depending on the test and complexity"
+                },
+                "skills_required": {
+                  "levels": ["Low", "High"],
+                  "extra_information": "Basic skills for simple tests, advanced skills for complex ones like PCR"
+                },
+                "resource_intensive": {
+                  "levels": ["Medium", "High"],
+                  "extra_information": "Depends on the number of tests and required equipment"
+                },
+                "costs": {
+                  "levels": ["Low", "High"],
+                  "extra_information": "Cost varies by the number of tests and type of analysis"
+                },
+                "description": "Laboratory testing involves a series of standardized tests conducted in a controlled lab environment to measure soil parameters such as pH, texture, nutrients, contaminants, microbial activity, and more. These tests provide accurate, quantifiable data on the soil’s condition, allowing for a detailed assessment of its health.",
+                "pros": [
+                  "Highly reliable and precise data",
+                  "Standardized methods provide reproducible results",
+                  "Covers a wide range of parameters to assess soil health comprehensively"
+                ],
+                "cons": [
+                  "Can be expensive, especially when testing multiple parameters",
+                  "Requires soil samples to be transported to the lab, which can delay results",
+                  "Requires specific sampling protocols for accurate representation"
+                ]
+              }
+            ]
+        },
+        {
+          "name": "Protection Against Pest and Diseases",
+          "description": "Agroforestry enhances protection against pests and diseases by fostering biodiversity. The mix of trees, crops, and sometimes livestock creates a balanced ecosystem where natural predators can control pests, reducing the need for chemical pesticides. Diverse plant species also disrupt pest and disease cycles, making it harder for them to spread. This approach strengthens crops and promotes a healthier, more resilient farming system.",
+          "indicators": [
+            {
+              "description": "Plant health refers to the overall condition of plants, including their growth, vigor, and resistance to pests, diseases, and environmental stressors. Healthy plants exhibit strong growth, vibrant leaves, and robust root systems, while showing minimal signs of damage or disease. In regenerative agroforestry, monitoring plant health is crucial for assessing the effectiveness of agroforestry practices. Healthy plants indicate good soil quality, effective pest management, and a balanced ecosystem, contributing to biodiversity, resilience, and sustainable yields over time."
+            },
+            {
+              "name": "Plant health"
+            },
+            {
+              "name": "Impact of plant health on food productivity"
+            }
+          ],
+          "methods": [
+            {
+              "name": "Visual Assessment",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline",
+                  "Monitoring and Evaluation"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": "Basic field knowledge"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": [
+                  "Low"
+                ],
+                "extra_information": null
+              },
+              "description": "Visual assessment involves regularly observing plants in the field to identify signs of pest and disease infestations. This method relies on the trained eye of field technicians or farmers who look for symptoms such as discoloration, wilting, leaf spots, deformed growth, or pest presence. It is often the first step in identifying problems early and determining whether further, more detailed analysis is required.",
+              "parameters_measured": [
+                "Pest Infestation: Percentage of plants affected by specific pests like aphids, caterpillars, or beetles.",
+                "Disease Presence: Percentage of plants showing symptoms of diseases (e.g., fungal or bacterial infections, viruses)."
+              ],
+              "pros": [
+                "Simple and cost-effective: No need for specialized equipment, just a field notebook and trained personnel.",
+                "Rapid identification: Allows for quick identification of pest and disease symptoms.",
+                "Flexible: Can be used in various environments and for different types of crops."
+              ],
+              "cons": [
+                "Subjective: The results depend on the experience and knowledge of the observer.",
+                "Limited sensitivity: Minor infestations may go unnoticed, particularly in the early stages.",
+                "Time-consuming: Requires frequent field visits to monitor plants, especially for large areas."
+              ]
+            },
+            {
+              "name": "Traps and Sticky Cards",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline Assessment",
+                  "Monitoring and Evaluation"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": "Understanding of pest behavior and trap setup"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": "Cost of traps and cards"
+              },
+              "description": "Trap and sticky cards are used to capture flying or crawling pests. These are placed around the area of interest (e.g., near plants or crop rows). Pheromone traps or sticky traps can help monitor specific pests by attracting them through scent or color. These traps help quantify the number and species of pests present, which can be used to calculate the percentage of plants likely affected by pests.",
+              "parameters_measured": [
+                "Pest Species Presence: Identifying which pests are present (e.g., aphids, beetles, flies).",
+                "Pest Density: Number of pests captured on the traps, helping to infer pest pressure and potential damage to crops."
+              ],
+              "pros": [
+                "Quantitative data: Provides a clear number of pests in the area, offering an objective measure of infestation.",
+                "Targeted monitoring: Can monitor specific pests of concern and prevent overuse of pesticides by accurately determining pest populations.",
+                "Continuous monitoring: Traps can be left in place for continuous monitoring, reducing the need for manual inspections."
+              ],
+              "cons": [
+                "Limited scope: Traps might only catch certain types of pests and miss others (e.g., ground-dwelling insects).",
+                "Maintenance required: Traps need regular maintenance, such as cleaning or replacement, especially during rainy or windy conditions.",
+                "Costs for setup: While generally affordable, the setup can be costly depending on the number of traps required for large areas."
+              ]
+            },
+            {
+              "name": "Remote Sensing – Apps",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline Assessment",
+                  "Monitoring and Evaluation"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": "Requires technical expertise in handling drones, satellite images, or sensors"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": [
+                  "High"
+                ],
+                "extra_information": "Drones, sensors, or satellite imaging services"
+              },
+              "description": "Remote sensing involves the use of satellites or drones equipped with high-resolution cameras and other sensors to capture images of large areas of crops. These sensors can detect changes in plant health by measuring factors like chlorophyll content, temperature, or water stress, which may indicate pest infestations or disease outbreaks. Drones and satellites can cover large areas more efficiently than traditional field inspections.",
+              "parameters_measured": [
+                "Plant Health Indicators: Chlorophyll content, leaf area index, or NDVI (Normalized Difference Vegetation Index) can indicate pest or disease impact on plant health.",
+                "Anomalies in Plant Vigor: Changes in plant color or texture visible in images can indicate infestations, diseases, or stress caused by environmental factors."
+              ],
+              "pros": [
+                "High efficiency: Allows for the monitoring of large-scale areas with minimal labor.",
+                "Early detection: Can detect issues before they are visible to the naked eye, such as subtle signs of pest infestation or disease.",
+                "Non-invasive: Does not require direct contact with plants, making it useful for sensitive areas or crops."
+              ],
+              "cons": [
+                "High cost: Requires investment in drone equipment, satellite image subscriptions, or services, which can be expensive.",
+                "Technical expertise required: Operators need to understand how to use the technology and interpret the data correctly.",
+                "Limited resolution: Depending on the technology used, remote sensing might not capture fine details of pest infestations or disease symptoms (e.g., small pests or early disease signs)."
+              ]
+            },
+            {
+              "name": "Leaf Tissue Sampling (Laboratory Method)",
+              "phase_of_project": {
+                "levels": [
+                  "Baseline Assessment",
+                  "Monitoring and Evaluation"
+                ],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": [
+                  "Medium",
+                  "High"
+                ],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": [
+                  "Medium",
+                  "High"
+                ],
+                "extra_information": "Requires knowledge of sampling techniques and laboratory analysis"
+              },
+              "resource_intensive": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": [
+                  "Medium"
+                ],
+                "extra_information": "Cost of lab analysis and transportation of samples"
+              },
+              "description": "Leaf tissue sampling involves collecting plant leaves from different parts of the plant, typically from mature leaves or those showing signs of nutrient deficiency. These samples are then sent to a laboratory for analysis, where various nutrients such as nitrogen (N), phosphorus (P), potassium (K), calcium (Ca), magnesium (Mg), and micronutrients (e.g., zinc, copper) are measured. This method provides precise and specific data on the plant's nutritional status.",
+              "parameters_measured": [
+                "Macronutrients: Nitrogen (N), Phosphorus (P), Potassium (K), Calcium (Ca), Magnesium (Mg).",
+                "Micronutrients: Iron (Fe), Manganese (Mn), Zinc (Zn), Copper (Cu), Boron (B).",
+                "Nutrient Deficiencies: Identifying which nutrients are deficient or imbalanced, affecting plant health."
+              ],
+              "pros": [
+                "Accurate and detailed: Provides specific nutrient levels in plant tissues, allowing for accurate diagnosis of deficiencies or excesses.",
+                "Comprehensive: Can measure multiple nutrients simultaneously, providing a complete picture of plant nutritional health.",
+                "Actionable data: The results can directly inform fertilizer application and management practices."
+              ],
+              "cons": [
+                "Labor-intensive: Requires careful and systematic sampling to ensure representative results.",
+                "Costs: Laboratory analysis incurs additional costs, including sample shipping and processing fees.",
+                "Delay in results: The process takes time, as samples must be collected, shipped, and analyzed in the lab."
+              ]
+            },
+            {
+              "name": "Diagnostic Kits",
+              "phase_of_project": {
+                "levels": ["Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Depends on the number of tests required"
+              },
+              "skills_required": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Basic understanding of how to use kits"
+              },
+              "resource_intensive": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "description": "Diagnostic kits are on-site tools that allow for rapid, qualitative or semi-quantitative analysis of nutrient levels in plants or soil. These kits usually come with reagents and color charts or digital meters that allow users to test for specific nutrients such as nitrogen, phosphorus, potassium, or pH. The kits provide a quick way to assess nutrient levels, especially when lab analysis is not feasible or cost-effective.",
+              "parameters_measured": [
+                "Plant Tissue Nutrient Levels: Primarily macronutrients like Nitrogen (N), Phosphorus (P), and Potassium (K)."
+              ],
+              "pros": [
+                "Fast and on-site: Provides immediate results without needing to send samples to a lab.",
+                "User-friendly: Most diagnostic kits are simple to use and require minimal training.",
+                "Low-cost: Generally affordable and accessible for farmers or field technicians."
+              ],
+              "cons": [
+                "Limited accuracy: Results may not be as precise as laboratory methods and may only provide rough estimates.",
+                "Limited range of nutrients: Kits typically focus on only a few key nutrients (e.g., N, P, K) rather than a comprehensive nutrient profile.",
+                "Reliance on visual cues: Often relies on color charts or indicators, which may not be as accurate as lab analysis."
+              ]
+            },
+            {
+              "name": "Mobile Apps",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Medium", "High"],
+                "extra_information": "Typically pay-per-use or subscription-based"
+              },
+              "skills_required": {
+                "levels": ["Medium"],
+                "extra_information": "Requires basic understanding of how to use the app and interpret the data"
+              },
+              "resource_intensive": {
+                "levels": ["Medium"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "description": "Mobile apps use smartphone cameras to capture images of plants or leaves, and then AI algorithms analyze these images to detect visual symptoms of nutrient deficiencies or imbalances. These apps typically focus on leaf color, texture, and overall plant condition, which can provide insights into specific nutrient deficiencies (e.g., nitrogen deficiency causing yellowing). Some apps may also use NDVI (Normalized Difference Vegetation Index) or similar metrics derived from images to assess overall plant health.",
+              "parameters_measured": [
+                "Leaf Discoloration: Changes in leaf color (e.g., yellowing or spotting) can indicate nutrient deficiencies, particularly nitrogen, magnesium, or iron.",
+                "General Plant Vigor: The overall health and growth of plants can be assessed, which is influenced by nutrient status.",
+                "Nutrient Deficiencies Detection: Using color-based algorithms, apps can estimate specific nutrient imbalances, like potassium or phosphorus deficiencies."
+              ],
+              "pros": [
+                "Non-invasive and quick: Provides immediate feedback from simple images taken with a smartphone.",
+                "Convenient: Easily accessible and portable, requiring just a smartphone to use.",
+                "User-friendly: Most apps are designed to be easy to use, even by non-experts.",
+                "Cost-effective: Often, these apps are free or available at a relatively low cost, especially for smaller-scale users or farmers.",
+                "Large-scale monitoring: Can potentially assess multiple plants or fields in a short amount of time."
+              ],
+              "cons": [
+                "Accuracy depends on image quality: The quality of the analysis is heavily dependent on the quality of the images taken (lighting, focus, etc.).",
+                "Limited to visible symptoms: These apps primarily rely on visual symptoms, which may not detect early-stage deficiencies or those that don’t show strong visual cues.",
+                "Limited scope: Many apps focus only on a few common nutrient deficiencies and may not provide a comprehensive nutrient status or detect all issues.",
+                "Internet dependency: Some apps rely on cloud-based analysis, so they require an internet connection for processing images and providing results."
+              ]
+            },
+            {
+              "name": "Visual Yield Estimation",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": ["Medium"],
+                "extra_information": "Basic understanding of plant growth and productivity"
+              },
+              "resource_intensive": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "description": "Visual yield estimation involves the observation of plant health and the visual assessment of factors such as plant size, the number of leaves, flowering or fruiting patterns, and overall plant vigor to estimate potential yield. Field experts or farmers can estimate the yield based on visual indicators of plant health, which directly impact productivity. This method is often used for crops with visible productivity indicators (e.g., fruits, grains).",
+              "parameters_measured": [
+                "Plant Vigor and Size: Larger, healthier plants generally correlate with higher productivity.",
+                "Presence of Fruits/Flowers: For fruiting plants, flower and fruit count can indicate yield potential.",
+                "Defoliation and Pest Damage: Reduced leaves or damage from pests/diseases typically reduces photosynthesis, impacting yield."
+              ],
+              "pros": [
+                "Quick and low-cost: This method is simple and doesn't require complex tools or lab tests.",
+                "Accessible: Anyone familiar with crop growth can use this method.",
+                "Low equipment requirements: Does not require specialized equipment or technology."
+              ],
+              "cons": [
+                "Subjective: Results depend on the experience of the observer and are influenced by their judgment.",
+                "Accuracy: It may not be as accurate for crops with invisible yield effects (e.g., root crops or crops without visible fruits).",
+                "Limited detail: While it offers a general estimate, it lacks the precision of more quantitative methods."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Biodiversity",
+          "description": "Biodiversity encompasses the variety of life within an ecosystem, including different species of plants, animals, fungi, and microorganisms. In agroforestry, high biodiversity means integrating diverse plant species, crops, trees, and sometimes livestock into the farming system. Paying special attention to the preservation of local varieties and breeds is key. This diversity creates a more resilient ecosystem capable of withstanding environmental stresses, reducing pest outbreaks, and maintaining ecosystem functions, such as pollination and nutrient cycling.",
+          "indicators": [
+            {
+              "description": "Biodiversity in agroforestry systems refers to the variety and abundance of plant species, animals (such as birds, mammals, insects), fungi, and microorganisms within an agroforestry landscape. This includes trees, crops, soil organisms, pollinators, predators, and decomposers, all interacting to form a resilient and functional ecosystem. In regenerative agroforestry, promoting biodiversity enhances ecosystem services like pollination, pest control, soil fertility, and water regulation. A diverse ecosystem also makes the system more resilient to shocks such as pests, diseases, and climate fluctuations, contributing to long-term sustainability, improved productivity, and environmental stability."
+            },
+            {
+              "name": "Diversity of crops"
+            },
+            {
+              "name": "Diversity of other plants"
+            },
+            {
+              "name": "Diversity of soil macrofauna"
+            }
+          ],
+          "methods": [
+            {
+              "name": "Wildlife Biodiversity (Camera Traps)",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Medium", "High"],
+                "extra_information": null
+              },
+              "skills_required": {
+                "levels": ["Medium"],
+                "extra_information": "Basic understanding of wildlife monitoring and camera trap setup"
+              },
+              "resource_intensive": {
+                "levels": ["Medium", "High"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Medium", "High"],
+                "extra_information": "Cost of equipment, maintenance"
+              },
+              "description": "Camera traps are motion-activated cameras set up in the field to capture images or videos of wildlife. They are used to monitor animal species, including mammals, birds, and nocturnal creatures, without disturbing their natural behavior. Effective for monitoring elusive or endangered species and tracking animal movement and behavior over time.",
+              "parameters_measured": [
+                "Species Diversity: Identification of animal species present in the area (e.g., mammals, birds, reptiles).",
+                "Population Monitoring: Number of individuals of different species based on frequency of capture (species richness).",
+                "Habitat Use: Patterns of habitat use and movement, helping understand which areas are more biodiverse."
+              ],
+              "pros": [
+                "Non-intrusive: Does not disturb wildlife, allowing for natural behavior to be recorded.",
+                "Wide coverage: Can monitor areas that are difficult to access by humans or during nighttime.",
+                "Provides a clear picture: Captures evidence of species presence, population, and behavior over extended periods."
+              ],
+              "cons": [
+                "Cost of equipment: Camera traps and associated equipment can be costly.",
+                "Maintenance and setup: Requires regular maintenance, such as battery replacement, checking for data storage, and repositioning to avoid misalignment.",
+                "Data overload: Can result in large amounts of data that require careful processing and analysis."
+              ]
+            },
+            {
+              "name": "Transect Walks and Quadrants",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Cost of materials for marking transects, data collection forms, etc."
+              },
+              "skills_required": {
+                "levels": ["Medium"],
+                "extra_information": "Basic understanding of ecological surveys and plant/animal identification"
+              },
+              "resource_intensive": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "description": "Transects and quadrats are techniques for sampling biodiversity, especially for plants and soil macrofauna. Transects involve setting a straight line across the study area and collecting data along it. Quadrats are fixed-size plots placed systematically along the transect, allowing for systematic data collection on plant species, animal presence, and macrofauna.",
+              "parameters_measured": [
+                "Species Richness: The number of different species in a given area.",
+                "Species Abundance: The number of individuals of each species found in the sampled area.",
+                "Vegetation Cover and Density: Percent cover of different plant species in a given area.",
+                "Soil Macrofauna Density: Number and diversity of macrofauna, such as earthworms, insects, and other soil organisms."
+              ],
+              "pros": [
+                "Cost-effective: Minimal costs involved (if no specialized equipment is required).",
+                "Flexibility: Can be adapted for different types of ecosystems and species (plants, insects, mammals).",
+                "Data rich: Provides detailed information on species distribution, abundance, and vegetation structure."
+              ],
+              "cons": [
+                "Labor-intensive: Requires physical presence and effort to measure and identify species.",
+                "Time-consuming: Data collection can take a long time, especially if the area being surveyed is large.",
+                "Potential bias: The method’s accuracy depends on the skill of the surveyor and the placement of transects/quadrats."
+              ]
+            },
+            {
+              "name": "Pitfall Traps (Soil Macrofauna)",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Cost of materials for creating traps"
+              },
+              "skills_required": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Basic understanding of trap setup and species identification"
+              },
+              "resource_intensive": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low"],
+                "extra_information": null
+              },
+              "description": "Pitfall traps are containers placed in the ground, usually half-buried, to capture soil-dwelling organisms such as insects, small amphibians, and other arthropods. This method is effective for studying soil-dwelling biodiversity in different ecosystems.",
+              "parameters_measured": [
+                "Soil Macrofauna Diversity: The range of different species captured in the traps.",
+                "Abundance of Soil Organisms: The number of individuals of each species found in the traps, providing insights into soil health and ecosystem functioning."
+              ],
+              "pros": [
+                "Low cost and simple setup: Pitfall traps are easy to create using low-cost materials.",
+                "Effective for small organisms: Provides an efficient way to monitor small and less visible soil organisms.",
+                "Non-invasive: Allows for the monitoring of soil biodiversity without disturbing the environment."
+              ],
+              "cons": [
+                "Limited to specific organisms: Primarily captures small soil-dwelling organisms and may not capture all species in the ecosystem.",
+                "Weather-dependent: Traps can fill with rainwater, which may skew results or require frequent monitoring.",
+                "Labor-intensive: Requires setting up and monitoring multiple traps, which can be time-consuming."
+              ]
+            },
+            {
+              "name": "Visual Surveys or Biodiversity Indexes",
+              "phase_of_project": {
+                "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+                "extra_information": null
+              },
+              "budget": {
+                "levels": ["Low", "Medium"],
+                "extra_information": "Depends on survey materials and transportation costs"
+              },
+              "skills_required": {
+                "levels": ["Medium", "High"],
+                "extra_information": "Knowledge of species identification and ecological survey methods"
+              },
+              "resource_intensive": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "costs": {
+                "levels": ["Low", "Medium"],
+                "extra_information": null
+              },
+              "description": "Visual surveys involve systematically observing the plant and animal species present in a specific area. This can include plant identification, counting animal sightings, or noting signs of activity (e.g., tracks, nests, droppings). These surveys are often combined with biodiversity indexes such as the Shannon-Wiener Index or Simpson’s Index, which measure species diversity and evenness.",
+              "parameters_measured": [
+                "Species Presence and Abundance: Counts and observations of individual species.",
+                "Biodiversity Indices: Measures of species richness and evenness that provide an overall picture of biodiversity in the area.",
+                "Habitat Quality: Assessment of the condition of the habitat based on the observed species and their behavior."
+              ],
+              "pros": [
+                "Cost-effective: Requires minimal resources (except for trained observers).",
+                "Versatile: Can be adapted to various ecosystems (forest, grassland, wetlands).",
+                "Comprehensive: Provides a broad assessment of both plant and animal species."
+              ],
+              "cons": [
+                "Subjectivity: Results depend on the experience of the surveyor and their ability to identify species.",
+                "Time-consuming: Requires significant time in the field for thorough monitoring, especially in large or complex ecosystems.",
+                "Limited to visible species: Only species that are observable (e.g., not nocturnal or hidden) can be monitored."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Water Management at Farm Level",
+          "description": "Water management at the farm level involves strategies and practices that ensure the efficient use, conservation, and protection of water resources within the agricultural system. In agroforestry, this might include techniques like rainwater harvesting, mulching, soils and water conservation measures, and the strategic planting of trees to improve water retention in the soil, reduce runoff, and prevent erosion. Effective water management enhances the resilience of crops to droughts and irregular rainfall patterns.",
+          "indicators": [
+            {
+              "description": "Water management at the farm level refers to the practices and strategies used to efficiently use and conserve water resources on a farm. This includes techniques for irrigation, water conservation, drainage, and the protection of water quality. It aims to ensure sufficient water for crops, reduce waste, and enhance water retention in the soil. In regenerative agroforestry, effective water management is critical for improving soil water retention, reducing runoff, and maintaining healthy ecosystems. Strategies such as rainwater harvesting, mulching, and planting deep-rooted trees help manage water efficiently, supporting plant growth, preventing erosion, and fostering ecosystem resilience."
+            },
+            {
+              "name": "Existence of floods"
+            },
+            {
+              "name": "Water availability throughout the year"
+            },
+            {
+              "name": "Springs emerging in the area"
+            },
+            {
+              "name": "Runoff on the farm"
+            }
+          ],
+          "methods": [{}]
+        },
+        {
+          "name": "Local Effects of Climate Change",
+          "description": "The local effects of climate change encompass the specific impacts that shifts in climate have on a given region. These may include rising temperatures, altered rainfall patterns, a higher frequency of extreme weather events (such as droughts or floods), and changes in growing seasons. For farmers, these changes can disrupt traditional agricultural practices, reduce crop yields, and heighten vulnerability to pests and diseases. However, in agroforestry systems, local microclimates can improve, as layered plantings provide shade, natural windbreaks, and enhanced moisture retention, helping to mitigate some climate-related challenges.",
+          "indicators": [
+            {
+              "description": "Microclimate management refers to the practice of controlling and optimizing localized climate conditions within a specific area, such as temperature, humidity, wind speed, and sunlight. This is achieved through strategic use of vegetation, landscape features, and design, with the goal of creating a more favorable environment for plants, animals, and overall ecosystem health. It is important to monitor the impact of regenerative agroforestry on the microclimate because agroforestry systems can significantly alter local climate conditions. By integrating trees and other vegetation, agroforestry influences factors like temperature regulation, soil moisture retention, wind protection, and humidity levels. Monitoring these impacts helps assess the effectiveness of agroforestry practices in improving crop growth, enhancing biodiversity, and increasing farm resilience to climate change. Understanding these effects ensures that agroforestry systems are optimizing local conditions to support long-term sustainability and productivity."
+            },
+            {
+              "name": "Greenhouse emissions"
+            },
+            {
+              "name": "Microclimate"
+            },
+            {
+              "name": "Rainfall"
+            },
+            {
+              "name": "Wind speed"
+            },
+            {
+              "name": "Soil moisture"
+            },
+            {
+              "name": "Air moisture"
+            },
+            {
+              "name": "Air temperature"
+            },
+            {
+              "name": "Soil temperature"
+            },
+            {
+              "name": "Shade"
+            }
+          ],
+          "methods": [
+          {
+            "name": "Rain Gauges",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "description": "A simple rain gauge is a cost-effective tool for measuring rainfall. Rain gauges collect rainwater, and the amount of water collected is measured to determine rainfall levels. A basic rain gauge can be manually emptied and recorded at regular intervals.",
+            "parameters_measured": [
+              "Rainfall Amount"
+            ],
+            "pros": [
+              "Low-cost: Inexpensive, easy to install, and maintain.",
+              "Simple to use: Requires minimal training and expertise."
+            ],
+            "cons": [
+              "Limited coverage: Data is available only for the location of the gauge.",
+              "Manual labor: Data collection may require manual intervention (unless automated)."
+            ]
+          },
+          {
+            "name": "Automatic Rain Gauges with Data Loggers",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "description": "Automated rain gauges with data loggers provide more accurate, real-time data on rainfall. The system automatically collects rainfall data and stores it in a data logger for later analysis, eliminating the need for manual intervention.",
+            "parameters_measured": [
+              "Rainfall Amount"
+            ],
+            "pros": [
+              "Automated data collection: Reduces the need for manual data entry and offers more consistent readings.",
+              "Real-time monitoring: Can provide data at set intervals (e.g., every hour)."
+            ],
+            "cons": [
+              "Higher cost: More expensive than traditional rain gauges.",
+              "Maintenance needs: Requires occasional calibration and maintenance of sensors."
+            ]
+          },
+          {
+            "name": "Remote Sensing for Rainfall",
+            "phase_of_project": {
+              "levels": ["Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "description": "Remote sensing technologies such as satellites or drones equipped with rain sensors or other weather instruments can capture rainfall data over a large area. These methods are particularly useful for monitoring rainfall patterns across broader landscapes and remote areas.",
+            "parameters_measured": [
+              "Rainfall Amount"
+            ],
+            "pros": [
+              "Large-scale coverage: Provides extensive, large-area data collection.",
+              "Non-invasive: Does not require physical equipment to be placed on-site."
+            ],
+            "cons": [
+              "Expensive: High setup and operational costs.",
+              "Data interpretation complexity: Requires expertise in remote sensing data processing."
+            ]
+          },
+          {
+            "name": "Anemometer",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "description": "An anemometer is a basic instrument used to measure wind speed. It can be placed at different heights or locations to track wind conditions. There are various types of anemometers, from simple mechanical versions to more advanced digital models.",
+            "parameters_measured": [
+              "Wind Speed"
+            ],
+            "pros": [
+              "Affordable: Low-cost option for wind speed measurement.",
+              "Easy to install and use: Can be placed in field settings with minimal setup."
+            ],
+            "cons": [
+              "Manual data collection: Requires manual readings unless paired with a data logger.",
+              "Limited precision: Basic models may not provide highly accurate or real-time data."
+            ]
+          },
+          {
+            "name": "Digital Anemometer with Data Logger",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Medium"],
+              "extra_information": null
+            },
+            "description": "A digital anemometer with a data logger records wind speed over time and stores the data for later analysis. These instruments can provide more accurate, continuous wind speed measurements compared to manual models.",
+            "parameters_measured": [
+              "Wind Speed"
+            ],
+            "pros": [
+              "Continuous data collection: Can record data automatically at regular intervals.",
+              "Accurate measurements: Provides precise wind speed data."
+            ],
+            "cons": [
+              "Costlier than manual models: The price is higher than basic anemometers.",
+              "Maintenance required: Regular calibration and occasional maintenance are needed."
+            ]
+          },
+          {
+            "name": "Remote Sensing (LIDAR and SODAR)",
+            "phase_of_project": {
+              "levels": ["Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "description": "LIDAR (Light Detection and Ranging) or SODAR (Sonic Detection and Ranging) technologies use sound or light pulses to measure wind speed at different altitudes. These methods are suitable for capturing detailed data on wind profiles across large areas or at multiple altitudes.",
+            "parameters_measured": [
+              "Wind Speed",
+              "Wind Direction"
+            ],
+            "pros": [
+              "Large-scale data: Can measure wind speed across large areas and multiple altitudes.",
+              "Non-invasive: No need to install instruments at ground level."
+            ],
+            "cons": [
+              "High cost: Expensive to install and maintain.",
+              "Complex data processing: Requires expertise to interpret the results."
+            ]
+          },
+          {
+            "name": "Air Moisture and Temperature and Soil Moisture and Temperature",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "description": "Basic probes can measure multiple parameters, including soil moisture, soil temperature, air temperature, and air humidity. These probes may combine simple sensors for each parameter and provide basic readings that can be checked manually or with basic data logging. While affordable, they may not provide continuous or high-precision measurements compared to advanced models.",
+            "parameters_measured": [
+              "Soil Moisture",
+              "Soil Temperature",
+              "Air Temperature",
+              "Air Humidity"
+            ],
+            "pros": [
+              "Low-cost: These multi-sensor devices are relatively affordable.",
+              "Simple to use: Installation is straightforward and does not require advanced technical knowledge."
+            ],
+            "cons": [
+              "Lower accuracy: These systems may not offer the high precision of more advanced models.",
+              "Manual monitoring: Data might need to be recorded manually unless paired with a simple data logger."
+            ]
+          },
+          {
+            "name": "Advanced Integrated Environmental Monitoring System (IoT Based)",
+            "phase_of_project": {
+              "levels": ["Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "description": "High-tech, IoT-based multi-parameter environmental monitoring systems can track multiple microclimate parameters, such as soil moisture, soil temperature, air temperature, and air humidity, using a single sensor array. These systems use wireless sensors that can be placed at various points in the field or greenhouse. The data collected is transmitted in real-time to cloud-based systems, where it can be analyzed via custom software or apps. These systems can often be integrated with automated irrigation or other management systems, making them very efficient for large-scale monitoring.",
+            "parameters_measured": [
+              "Soil Moisture",
+              "Soil Temperature",
+              "Air Temperature",
+              "Air Humidity"
+            ],
+            "pros": [
+              "High precision: These sensors provide accurate, real-time data with minimal human intervention.",
+              "Remote monitoring: Data can be accessed from anywhere using cloud-based platforms or mobile apps.",
+              "Automation potential: Integration with other systems (e.g., automated irrigation) is possible for optimized resource management."
+            ],
+            "cons": [
+              "High cost: These systems require a significant initial investment and maintenance.",
+              "Complexity: Installation and setup may require specialized knowledge, and the system can be more complex to manage."
+            ]
+          },
+          {
+            "name": "Visual Estimation/Shade Cloth",
+            "phase_of_project": {
+              "levels": ["Baseline Assessment", "Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["Low"],
+              "extra_information": null
+            },
+            "description": "Visual estimation is the simplest method for assessing shade, where field personnel visually inspect areas to estimate the amount of shade or light penetration. Alternatively, shade cloths (fabric with specified light permeability) can be placed in various locations to estimate and compare shade conditions.",
+            "parameters_measured": [
+              "Shade (General light intensity)"
+            ],
+            "pros": [
+              "Very low cost: No specialized equipment required.",
+              "Simple and quick: Easy to implement with no complex setup."
+            ],
+            "cons": [
+              "Subjective: Highly dependent on the observer’s judgment, leading to potential inconsistencies.",
+              "Inaccurate: Does not provide quantitative data."
+            ]
+          },
+          {
+            "name": "Drones for Shade Mapping",
+            "phase_of_project": {
+              "levels": ["Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "description": "Drones equipped with multispectral or RGB cameras can capture high-resolution images of vegetation and the surrounding area. These images can be analyzed using software to calculate shading patterns and the extent of canopy cover, which directly correlates to the shade provided by plants. Drones can cover large areas quickly, offering a bird’s-eye view of vegetation.",
+            "parameters_measured": [
+              "Shade (Light Intensity / Canopy Cover)"
+            ],
+            "pros": [
+              "Large-scale coverage: Can capture data for large areas, including hard-to-reach locations.",
+              "Detailed analysis: Multispectral imagery can provide detailed data about plant canopy structure and light interception."
+            ],
+            "cons": [
+              "Expensive: Drones and imaging software are costly.",
+              "Technical expertise: Requires knowledge of drone operation, image processing, and data analysis.",
+              "Regulatory concerns: Use of drones may be restricted in certain areas or require permits."
+            ]
+          },
+          {
+            "name": "Remote Sensing for Shade",
+            "phase_of_project": {
+              "levels": ["Monitoring and Evaluation"],
+              "extra_information": null
+            },
+            "budget": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "skills_required": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "resource_intensive": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "costs": {
+              "levels": ["High"],
+              "extra_information": null
+            },
+            "description": "Remote sensing via satellite or aerial imagery can be used to monitor canopy cover and assess shade across large areas. Satellites like Landsat or MODIS provide freely accessible images at different spatial resolutions, which can be analyzed to estimate vegetation cover and light interception over time. These systems can cover entire landscapes and provide insight into shading patterns due to natural or agricultural vegetation.",
+            "parameters_measured": [
+              "Shade (Light Intensity / Canopy Cover)"
+            ],
+            "pros": [
+              "Extensive coverage: Can monitor vast areas that would otherwise be difficult to assess on the ground.",
+              "Time-series data: Allows for long-term monitoring and comparison of changes over time.",
+              "Non-invasive: No need for physical sensors or equipment on the ground."
+            ],
+            "cons": [
+              "High cost: Satellite imagery and data analysis can be expensive, especially for frequent updates.",
+              "Resolution limitations: Depending on the satellite, the resolution may not be detailed enough for small-scale or highly localized shade assessment.",
+              "Data interpretation: Requires expertise in remote sensing and image analysis."
+            ]
+          }
+        ]
+        },
+        {
+          "name": "Ecosystem Services",
+          "description": "Ecosystem services are the benefits that humans derive from natural ecosystems. In the context of agroforestry, these services include carbon sequestration, water purification, soil fertility enhancement, climate regulation, and habitat provision for wildlife. Ecosystem services are essential for maintaining the environmental balance needed for sustainable agriculture and human well-being.",
+          "indicators": [
+            {
+              "description" : "Ecosystem services refer to the benefits that humans obtain from nature, including the provisioning of resources (e.g., food, water), regulating services (e.g., climate regulation, water purification), cultural services (e.g., recreation, aesthetic value), and supporting services (e.g., soil formation, nutrient cycling). These services are essential for maintaining life, economic stability, and overall well-being. It is important to monitor the impact of  regenerative agroforestry on ecosystem services because agroforestry systems can enhance or degrade these services. By integrating trees, crops, and livestock, agroforestry can improve soil health, increase water retention, reduce erosion, enhance biodiversity, and sequester carbon. Monitoring these impacts ensures that agroforestry practices are effectively contributing to the environment and local communities, helping to improve sustainability and resilience in the long term."
+            }
+          ]
+        },
+        {
+          "name": "Resilient Livelihoods",
+          "description": "Resilient livelihoods are those that can withstand and adapt to various shocks and stresses, whether economic, environmental, or social. In agroforestry, resilient livelihoods are achieved by diversifying income sources, improving food security, and building local capacity. This means that even in the face of climate change, market fluctuations, or other challenges, farming communities can continue to thrive and sustain themselves over the long term.",
+          "indicators": [
+            {
+              "description": "Resilient livelihoods indicators are measures used to assess the ability of individuals, households, or communities to withstand and recover from shocks, such as economic downturns, climate events, or other stressors. These indicators typically include income stability, access to resources, diversification of income sources, social capital, and adaptive capacity.  It is important to monitor the impact of regenerative agroforestry on resilient livelihoods because agroforestry can play a key role in improving the resilience of local communities. By diversifying income sources, increasing food security, and providing ecosystem services, agroforestry helps communities reduce vulnerability to external shocks. Monitoring these indicators helps assess the effectiveness of agroforestry in promoting long-term, sustainable livelihoods, ensuring that the system contributes to both environmental and socio-economic resilience."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "More Diverse and Healthy Diets (Nutrition)",
+      "description": "Agroforestry enhances food diversity by integrating a variety of crops, fruits, nuts, and even livestock with trees. This diversified production leads to improved diets and access to a broader range of nutrients for local communities. Trees can also improve soil health, which in turn boosts the nutritional quality of crops grown alongside them.",
+      "subsections": [
+        {
+          "name": "Availability of Food Products",
+          "description": "Availability of food products refer to the consistent and diverse supply of food throughout the year, providing essential nutrients across food groups. Agroforestry promotes a wide range of food sources, including fruits, nuts, vegetables, and sometimes animal products, that can be harvested year-round. This diversity across food groups improves access to essential nutrients and provides families with a more balanced and nutritious diet."
+        },
+        {
+          "name": "Food Intake",
+          "description": "Food intake refers to the quantity and quality of food consumed, which impacts overall health and well-being. By increasing access to diverse, nutrient-dense foods, agroforestry improves both the quality and quantity of food intake for families. With a greater selection of fresh produce readily available, households can enjoy healthier, more nutritious meals, reducing reliance on processed or less nutritious foods."
+        },
+        {
+          "name": "Nutrition and Dietary Diversity",
+          "description": "Nutrition and dietary diversity refer to the range of different foods consumed, which ensures a balanced intake of essential nutrients and reduces the risk of nutritional deficiencies. Agroforestry fosters a more diverse diet by providing various plant species and food types, including fruits, leafy greens, proteins, and root vegetables. This range helps meet nutritional needs and supports a healthier, more resilient community by reducing dependency on single food sources."
+        },
+        {
+          "name": "Food Security",
+          "description": "Food security is consistent access to sufficient, safe, and nutritious food that meets dietary needs and supports active, healthy lives. By offering a steady supply of food through the integration of crops and perennial trees, agroforestry enhances food security and minimizes seasonal gaps in food availability. This stability is especially valuable during periods of climate stress or economic hardship, ensuring communities can sustain themselves with adequate food sources."
+        }
+      ]
+    },
+    {
+      "name": "Better Work and Higher Income for Young People and Women",
+      "description": "Agroforestry systems create opportunities for diverse income streams, including harvesting fruits, nuts, and timber, and processing products like honey or herbal medicines. These opportunities can empower young people and women by offering them roles in production, processing, and marketing. The skills and knowledge required for agroforestry are often transferable, providing young people and women with valuable expertise that can be applied to various agricultural or entrepreneurial activities.",
+      "subsections": [
+        {
+          "name": "Better Labor Conditions",
+          "description": "This refers to improvements in working conditions for both those directly involved in farming and those engaged in related activities, such as processing and marketing.  Projects that include agroforestry systems as part of their activities can improve labor conditions by creating diversified, less physically demanding work compared to monoculture farming. Tasks like harvesting fruits, nuts, or honey, or processing medicinal plants, can be less intensive and more flexible. Additionally, by diversifying income opportunities, agroforestry provides more stable and fair wages, especially for young people and women, while reducing exposure to the risks associated with traditional farming practices. This also benefits those outside of direct production, such as those involved in processing, selling, or marketing agroforestry products. Of course, this also depends on the project set up. "
+        },
+        {
+          "name": "Improved Balance Year-Round of Labor and Resources",
+          "description": "This refers to the more even distribution of work and resource use throughout the year, reducing periods of intense labor and resource strain. Agroforestry systems spread labor demands over the year by integrating crops, trees, and livestock that mature at different times. This reduces seasonal peaks in labor, as work is more evenly distributed. Additionally, the diverse production from agroforestry (e.g., fruits, nuts, timber, and medicinal plants) ensures a steady flow of resources, helping farmers manage labor and material needs more efficiently. This balance benefits young people and women, offering more stable work opportunities throughout the year."
+        },
+        {
+          "name": "Improved Income Opportunities",
+          "description": "This refers to the creation of new or enhanced income-generating opportunities through agroforestry, either within the production system itself or through related activities like processing, marketing, and value-added products. Agroforestry creates diverse income streams through the production of food, timber, medicinal plants, and other non-timber forest products. These opportunities extend beyond farming, providing income through processing, marketing, or selling value-added products like honey or herbal medicines. Women and youth, in particular, benefit from these diversified roles, gaining access to stable and often flexible income opportunities that empower them economically and socially."
+        },
+        {
+          "name": "Support to Develop Additional Income-Generating Activities",
+          "description": "This refers to providing support and resources to individuals, particularly women and youth, to help them create new sources of income through activities linked to agroforestry or related sectors. Agroforestry systems support the development of additional income-generating activities by diversifying products like fruits, nuts, medicinal plants, and timber. Training and resources for processing, marketing, and value-added production empower individuals to create small businesses or improve existing ones. This not only provides extra income but also fosters entrepreneurship, especially among women and youth, by offering new skills and opportunities to generate revenue outside traditional farming. Of course, this also depends on the project set up."
+        },
+        {
+          "name": "Higher Income or Revenue and More Stable Year-Round",
+          "description": "This refers to increased and more consistent income for those involved in both production and related activities, with reduced seasonality in earnings. Agroforestry systems offer higher and more stable year-round income by diversifying the types of products grown and harvested, such as fruits, timber, medicinal plants, and honey. This steady flow of resources provides consistent income for production workers. Additionally, those involved in processing, marketing, or value-added activities benefit from more regular work opportunities, reducing seasonal income fluctuations and enhancing financial stability for both production workers and those in related sectors."
+        }
+      ]
+    },
+    {
+      "name": "Sustainable Value Chains",
+      "description": "The impact on sustainable value chains comes not only from the agroforestry practices but also from how projects are structured. Effective projects often include institutional arrangements that link farmers to markets, ensuring efficient distribution of agroforestry products like timber, fruits, and non-timber forest products. Capacity building equips farmers with the skills needed to manage agroforestry systems and engage in value-added processing, while entrepreneurship is encouraged through the development of businesses around these diverse products. Government support in the form of policies, incentives, and infrastructure further strengthens these value chains. This comprehensive approach ensures that agroforestry contributes to economic growth and resilience, creating more stable and sustainable markets.",
+      "subsections": [
+        {
+          "name": "Increased Diversity of Farming Products",
+          "description": "This refers to the variety of products produced within agroforestry systems, such as food crops, timber, medicinal plants, and other non-timber forest products (NTFPs). Agroforestry systems promote a diverse range of products, from food crops to medicinal plants, which increases local availability and supports self-sufficiency. By incorporating trees and shrubs alongside crops, agroforestry creates opportunities for producing herbal medicines, honey, and other products that can be sold or used locally. This diversity helps provide income opportunities for young people and women, fostering economic empowerment and reducing reliance on external resources."
+        },
+        {
+          "name": "Increased Quantity and Quality of Crops",
+          "description": "This refers to the enhancement of crop yields and quality, leading to higher productivity or the ability to command a better price per unit (e.g., per kilogram) in the market. Agroforestry systems improve both the quantity and quality of crops by enhancing soil health, water retention, and pest control, all of which contribute to higher yields. The diverse plantings in agroforestry systems also reduce vulnerability to climate stresses and pests, leading to more consistent production. Additionally, agroforestry can add value to crops, such as through the production of organic or specialty products like high-quality fruits, medicinal plants, or timber, which can command a higher price per kilogram in the market, improving farmers' profitability."
+        },
+        {
+          "name": "Improved Access to Input and Output Markets",
+          "description": "This refers to the ability of farmers to access the resources they need for production (inputs like seeds, fertilizers, tools) and to sell their products in efficient and profitable markets. Agroforestry can enhance access to both input and output markets by being included or contributing to value chains that link farmers with suppliers and buyers. Institutional support, such as cooperatives or farmer organizations, can help farmers access quality inputs like seeds, tools, and organic fertilizers, reducing costs and improving productivity. Additionally, agroforestry systems diversify products, opening new market opportunities for crops, timber, medicinal plants, and non-timber forest products (NTFPs). These market linkages, supported by government policies and infrastructure, ensure better access to both local and global markets, improving farmers' profitability and market reach."
+        },
+        {
+          "name": "Better Access to Quality Seeds, Fertilizers, Tools, and Markets",
+          "description": "This refers to the improved availability and affordability of high-quality agricultural inputs (seeds, fertilizers, tools) and access to markets for selling products. Agroforestry systems improve access to quality inputs and markets by fostering institutional networks and partnerships that provide farmers with reliable sources of quality seeds, organic fertilizers, and tools. Farmer groups, cooperatives, and government support can help reduce costs and increase access to necessary resources. Additionally, the diverse range of products in agroforestry systems (e.g., fruits, timber, medicinal plants) creates access to various markets, ensuring farmers can sell their products at fair prices. This strengthened access to both inputs and markets supports increased productivity and profitability."
+        },
+        {
+          "name": "Livelihoods Improvement",
+          "description": "This refers to enhancing the economic well-being and resilience of individuals or communities through better income, food security, and access to resources. Agroforestry improves livelihoods by diversifying income sources through the production of food, timber, medicinal plants, and non-timber forest products. It helps reduce vulnerability to market fluctuations and climate shocks, providing stable income streams. Additionally, agroforestry promotes food security by improving soil health and water management, ensuring a steady supply of nutritious food. The integration of women and youth in these diverse activities further strengthens community resilience and economic empowerment."
+        },
+        {
+          "name": "Net Increase in Income and Volumes Sold in the Value Chain",
+          "description": "This refers to the overall increase in revenue from both higher income and increased quantities of products sold. Agroforestry contributes to a net increase in income and volumes sold by diversifying the range of products available for sale, such as fruits, timber, medicinal plants, and non-timber forest products. Improved farming practices in agroforestry systems lead to higher yields, while value-added products (e.g., processed goods) can be sold at a premium. By enhancing both product quantity and quality, agroforestry systems enable farmers to sell more at better prices, leading to higher overall income."
+        }
+      ]
+    }
+  ]
+}

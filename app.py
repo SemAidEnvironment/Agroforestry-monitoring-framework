@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import pandas as pd
-
+import json
 
 def check_missing_criteria_answers(project):
     # Get all required criteria
@@ -127,139 +127,321 @@ def account():
     return render_template('account.html', projects=projects, project_details=project_details)
 
 
+
+
+
 # Unified create and edit project route
 @app.route("/questions", methods=["GET", "POST"])
 @login_required
 def questions():
     project_id = request.args.get('project_id')
-    project = Project.query.get(project_id) if project_id else None
-    criteria = Criteria.query.all()  # Fetch all available criteria
+    project = db.session.get(Project, project_id) if project_id else None  # Updated to use db.session.get()
 
-    # If the request is POST, either create a new project or update existing criteria
+    # Convert Criteria model instances to dictionaries with split options
+    criteria = [
+        {
+            "id": criterion.id,
+            "name": criterion.name,
+            "options": criterion.options.split(",")
+        }
+        for criterion in Criteria.query.all()
+    ]
+
+    # Load subsections from reporting_area.json
+    with open('static/data/reporting_area.json', 'r') as json_file:
+        reporting_areas = json.load(json_file)["reporting_areas"]
+
     if request.method == "POST":
+        errors = []
+
         if not project:
-            # If no project exists, create a new project with a name
             project_name = request.form.get("project_name")
             project = Project(name=project_name, owner=current_user)
             db.session.add(project)
-            db.session.commit()  # Save to generate the project ID
+            db.session.commit()
+
+        # Save or update criteria answers
+        selected_areas = request.form.getlist("criteria_reporting_area")
+        selected_subsections = request.form.getlist("criteria_subsections")
+
+        # Validation: Ensure at least one reporting area is selected
+        if not selected_areas:
+            errors.append("Please select at least one reporting area.")
+
+        # Validation: Ensure at least one subsection is selected per selected reporting area
+        for area in reporting_areas:
+            if area["name"] in selected_areas:
+                area_subsections = [sub["name"] for sub in area.get("subsections", [])]
+                if not any(sub in selected_subsections for sub in area_subsections):
+                    errors.append(f"Please select at least one subsection for '{area['name']}'.")
+
+        if errors:
+            for error in errors:
+                flash(error, "danger")  # Ensure "danger" matches the template's CSS class
+            return render_template(
+                "questions.html",
+                project=project,
+                criteria=criteria,
+                reporting_areas=reporting_areas,
+                project_criteria_answers={
+                    pc.criteria.name: pc.answer.split(",")
+                    if pc.criteria.name in ["reporting_area", "subsections"]
+                    else pc.answer
+                    for pc in project.project_criteria
+                }
+                if project
+                else {},
+            )
 
         # Save or update criteria answers
         for criterion in criteria:
-            answer = request.form.get(f"criteria_{criterion.id}")
+            if criterion["name"] == "reporting_area":
+                selected_areas = request.form.getlist(f"criteria_{criterion['name']}")
+                answer = ",".join(selected_areas)
+            elif criterion["name"] == "subsections":
+                selected_subsections = request.form.getlist(f"criteria_{criterion['name']}")
+                answer = ",".join(selected_subsections)
+            else:
+                answer = request.form.get(f"criteria_{criterion['name']}")
+
             if answer:
                 project_criteria = ProjectCriteria.query.filter_by(
-                    project_id=project.id, criteria_id=criterion.id
+                    project_id=project.id, criteria_id=criterion["id"]
                 ).first()
 
                 if project_criteria:
                     project_criteria.answer = answer
                 else:
                     new_project_criteria = ProjectCriteria(
-                        project_id=project.id, criteria_id=criterion.id, answer=answer
+                        project_id=project.id, criteria_id=criterion["id"], answer=answer
                     )
                     db.session.add(new_project_criteria)
 
         db.session.commit()
         return redirect(url_for("longlist", project_id=project.id))
 
-    # Fetch existing answers for the project
-    project_criteria_answers = {pc.criteria_id: pc.answer for pc in project.project_criteria} if project else {}
+    # Prepare existing answers for display
+    project_criteria_answers = {
+        pc.criteria.name: pc.answer.split(",") if pc.criteria.name in ["reporting_area", "subsections"] else pc.answer
+        for pc in project.project_criteria
+    } if project else {}
 
-    return render_template("questions.html", project=project, criteria=criteria,
-                           project_criteria_answers=project_criteria_answers)
+    with open('static/data/criteria_descriptions.json', 'r') as json_file:
+        criteria_descriptions = json.load(json_file)
+
+    return render_template(
+        "questions.html",
+        project=project,
+        criteria=criteria,
+        reporting_areas=reporting_areas,
+        project_criteria_answers=project_criteria_answers,
+        criteria_descriptions=criteria_descriptions
+    )
 
 
-@app.route("/longlist/<int:project_id>", methods=['GET', 'POST'])
+@app.route("/longlist/<int:project_id>", methods=["GET", "POST"])
 @login_required
 def longlist(project_id):
-    project = Project.query.get(project_id) if project_id else None
-    # Check if there are any missing criteria answers
+    project = Project.query.get_or_404(project_id)
+
+    # Load the reporting area methods from the JSON file
+    with open("static/data/reporting_area.json", "r") as json_file:
+        reporting_areas = json.load(json_file)["reporting_areas"]
+
+    # Load the always applicable methods from the separate JSON file
+    with open("static/data/methods.json", "r") as json_file:
+        always_applicable_methods = json.load(json_file)["methods"]
+
+    # Check for missing criteria
     if check_missing_criteria_answers(project):
         flash("Additional criteria have been added. Please answer the new questions before proceeding.", "warning")
-        return redirect(url_for('questions', project_id=project.id))
-    project = Project.query.get_or_404(project_id)
-    techniques_df = pd.read_excel('data/techniques.xlsx')
+        return redirect(url_for("questions", project_id=project.id))
 
-    # Fetch the project answers dynamically from ProjectCriteria
+    # Fetch project answers dynamically from ProjectCriteria
     project_answers = {
-        pc.criteria.name: pc.answer for pc in project.project_criteria
+        pc.criteria.name: pc.answer.split(",") if pc.criteria.name in ["reporting_area", "subsections"] else pc.answer
+        for pc in project.project_criteria
     }
 
-    selected_techniques = [t.technique_name for t in project.techniques]
+    # Collect all methods from reporting areas
+    reporting_area_methods = []
+    for reporting_area in reporting_areas:
+        for subsection in reporting_area.get("subsections", []):
+            for method in subsection.get("methods", []):
+                if "name" in method:
+                    # Add reporting area and subsection information to the method
+                    reporting_area_methods.append({
+                        "reporting_area": reporting_area["name"],
+                        "subsections": subsection["name"],
+                        **method
+                    })
+                else:
+                    app.logger.warning(
+                        f"Method in subsection '{subsection['name']}' is missing a 'name' key and will be skipped."
+                    )
 
-    # Define a function to determine if a technique fits the project's answers dynamically
-    def technique_fits(technique, project_answers):
+    # Combine reporting area methods and always applicable methods
+    all_methods = reporting_area_methods + always_applicable_methods
+
+    # Define a function to determine if a method fits the project's answers
+    def method_fits(method, project_answers):
         for criterion, answer in project_answers.items():
-            if pd.notna(technique.get(criterion)) and answer not in str(technique.get(criterion)).split(','):
-                return False
+            field = method.get(criterion)
+            # Handle reporting_area and subsections
+            if criterion in ["reporting_area", "subsections"]:
+                if field and field not in answer:
+                    return False
+            elif field and "levels" in field:
+                # Check other criteria (budget, skills, etc.)
+                if answer not in field["levels"]:
+                    return False
         return True
 
-    # Filter techniques that fit the criteria
-    fitting_techniques = techniques_df[techniques_df.apply(lambda x: technique_fits(x, project_answers), axis=1)]
+    # Define a function to check if a method is "beyond capacity"
+    def method_beyond_capacity(method, project_answers):
+        # Priority mapping for levels
+        LEVEL_PRIORITY = {"Low": 1, "Medium": 2, "High": 3}
 
-    # Find techniques that were selected but no longer fit
-    non_fitting_selected_techniques = techniques_df[
-        ~techniques_df.apply(lambda x: technique_fits(x, project_answers), axis=1) &
-        techniques_df['technique_name'].isin(selected_techniques)
+        for criterion, answer in project_answers.items():
+            # Skip phase_of_project as it does not have hierarchical levels
+            if criterion == "phase_of_project":
+                continue
+
+            field = method.get(criterion)
+            if field and "levels" in field:
+                levels = field["levels"]
+
+                # Filter levels to those present in LEVEL_PRIORITY
+                valid_levels = [LEVEL_PRIORITY[level] for level in levels if level in LEVEL_PRIORITY]
+
+                # Handle empty or invalid levels gracefully
+                if not valid_levels:
+                    app.logger.warning(
+                        f"Levels for method '{method['name']}' in criterion '{criterion}' are invalid or empty.")
+                    continue
+
+                # Get the maximum priority of the method's levels
+                max_method_priority = max(valid_levels)
+
+                # Get the user's selected priority
+                user_priority = LEVEL_PRIORITY.get(answer, 0)
+
+                # If the user's priority exceeds the method's max, it is beyond capacity
+                if user_priority > max_method_priority:
+                    return True
+        return False
+
+    # Pre-index methods by name for faster lookups
+    methods_by_name = {method["name"]: method for method in all_methods}
+
+    # Categorize methods
+    fitting_methods = [method for method in all_methods if method_fits(method, project_answers)]
+    beyond_capacity_methods = [
+        method for method in all_methods
+        if method not in fitting_methods and method_beyond_capacity(method, project_answers)
+    ]
+    selected_methods = [t.technique_name for t in project.techniques]
+    non_fitting_selected_methods = [
+        method for method in all_methods
+        if method["name"] in selected_methods and not method_fits(method, project_answers)
+    ]
+
+    if request.method == "POST":
+        newly_selected_methods = request.form.getlist("technique")
+
+        # Check if any non-fitting techniques are still selected
+        non_fitting_selected_in_post = [
+            method for method in non_fitting_selected_methods
+            if method["name"] in newly_selected_methods
         ]
 
-    if request.method == 'POST':
-        newly_selected_techniques = request.form.getlist('technique')
+        if non_fitting_selected_in_post:
+            flash("Warning: Some selected techniques do not fit the current criteria. Please review your selection.", "warning")
+            return render_template(
+                "longlist.html",
+                fitting_methods=fitting_methods,
+                beyond_capacity_methods=beyond_capacity_methods,
+                non_fitting_selected_methods=non_fitting_selected_methods,
+                selected_methods=newly_selected_methods,
+                project_id=project.id,
+                project=project,
+            )
 
         # Add new selections
-        for technique_name in newly_selected_techniques:
-            if technique_name not in selected_techniques:
-                description = techniques_df[techniques_df['technique_name'] == technique_name]['description'].values[0]
-                image_filename = \
-                techniques_df[techniques_df['technique_name'] == technique_name]['image_filename'].values[0]
-                selected = SelectedTechnique(
-                    technique_name=technique_name,
-                    description=description,
-                    image_filename=image_filename,
-                    project_id=project.id
-                )
-                db.session.add(selected)
+        for method_name in newly_selected_methods:
+            if not SelectedTechnique.query.filter_by(project_id=project.id, technique_name=method_name).first():
+                selected_method = methods_by_name.get(method_name)
+                if selected_method:
+                    new_selection = SelectedTechnique(
+                        technique_name=selected_method["name"],
+                        description=selected_method["description"],
+                        image_filename=selected_method.get("photo"),
+                        project_id=project.id,
+                    )
+                    db.session.add(new_selection)
 
-        # Remove deselected techniques
+        # Remove deselected methods
         for technique in project.techniques:
-            if technique.technique_name not in newly_selected_techniques:
+            if technique.technique_name not in newly_selected_methods:
                 db.session.delete(technique)
 
         db.session.commit()
-        return redirect(url_for('project', project_id=project.id, project =project))
+        return redirect(url_for("project", project_id=project.id))
 
-    # Prepare reasons for non-fitting techniques
+    # Prepare reasons for non-fitting methods
     reasons = {}
-    for index, technique in non_fitting_selected_techniques.iterrows():
+    for method in non_fitting_selected_methods:
         reason = []
         for criterion, answer in project_answers.items():
-            if pd.notna(technique.get(criterion)) and answer not in str(technique.get(criterion)).split(','):
+            field = method.get(criterion)
+            if field and "levels" in field and answer not in field["levels"]:
                 reason.append(
-                    f"Your selected {criterion.replace('_', ' ')} is '{answer}'. However, this technique is suitable for '{technique.get(criterion)}'."
+                    f"Your selected {criterion.replace('_', ' ')} is '{answer}', "
+                    f"but this method is suitable for {', '.join(field['levels'])}."
                 )
-        reasons[technique['technique_name']] = ' '.join(reason)
+        reasons[method["name"]] = " ".join(reason)
 
-    return render_template('longlist.html',
-                           fitting_techniques=fitting_techniques.to_dict('records'),
-                           non_fitting_selected_techniques=non_fitting_selected_techniques.to_dict('records'),
-                           reasons=reasons,
-                           selected_techniques=selected_techniques,
-                           project_id=project.id,
-                           project=project)
+    return render_template(
+        "longlist.html",
+        fitting_methods=fitting_methods,
+        beyond_capacity_methods=beyond_capacity_methods,
+        non_fitting_selected_methods=non_fitting_selected_methods,
+        reasons=reasons,
+        selected_methods=selected_methods,
+        project_id=project.id,
+        project=project,
+    )
 
-@app.route("/project/<int:project_id>")
+
+
+
+@app.route("/project/<int:project_id>", methods=['GET'])
 @login_required
 def project(project_id):
-    project = Project.query.get(project_id) if project_id else None
-    # Check if there are any missing criteria answers
+    project = Project.query.get_or_404(project_id)
+
+    # Check for missing criteria answers
     if check_missing_criteria_answers(project):
         flash("Additional criteria have been added. Please answer the new questions before proceeding.", "warning")
         return redirect(url_for('questions', project_id=project.id))
-    project = Project.query.get_or_404(project_id)
+
+    # Fetch project criteria answers
     criteria_answers = {pc.criteria.name: pc.answer for pc in project.project_criteria}
+
+    # Retrieve selected techniques for the project
     techniques = SelectedTechnique.query.filter_by(project_id=project.id).all()
-    return render_template('project.html', project=project, techniques=techniques, criteria_answers=criteria_answers)
+
+    if not techniques:
+        app.logger.warning(f"No techniques found for project ID {project_id}.")
+
+    return render_template(
+        'project.html',
+        project=project,
+        techniques=techniques,
+        criteria_answers=criteria_answers
+    )
+
+
 
 
 @app.route("/logout")
@@ -286,12 +468,17 @@ def delete_project(project_id):
 @login_required
 def intervention(project_id, technique_name):
     project = Project.query.get_or_404(project_id)
+
+
+    with open('static/data/reporting_area.json', 'r') as json_file:
+        reporting_areas = json.load(json_file)
     # Assuming that techniques are directly related to the project
     technique = next((tech for tech in project.techniques if tech.technique_name == technique_name), None)
     if technique is None:
         abort(404)  # Technique not found in the project
     # Pass both `project` and `technique` to the template
-    return render_template("intervention.html", project=project, technique=technique)
+    return render_template("intervention.html", project=project, technique=technique,
+                           reporting_areas=reporting_areas)
 
 @app.route("/project/<int:project_id>/technique/<string:technique_name>/remove", methods=['POST'])
 @login_required

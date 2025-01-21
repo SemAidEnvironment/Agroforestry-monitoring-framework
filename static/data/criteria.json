@@ -1,0 +1,30 @@
+[
+    {
+        "name": "reporting_area",
+        "options": "Climate Resilient Food Production Systems,More Diverse and Healthy Diets (Nutrition),Better Work and Higher Income for Young People and Women,Sustainable Value Chains"
+    },
+    {
+        "name": "subsections",
+        "options": "Area Under Agroecological/Sustainable Farming Practices,Biodiversity,Ecosystem Services,Local Effects of Climate Change,Protection Against Pest and Diseases,Resilient Livelihoods,Soil Health,Water Management at Farm Level"
+    },
+    {
+        "name": "phase_of_project",
+        "options": "Baseline Assessment, Monitoring and Evaluation, End-baseline assessment"
+    },
+    {
+        "name": "budget",
+        "options": "Low,Medium,High"
+    },
+    {
+        "name": "skills_required",
+        "options": "Low,Medium,High"
+    },
+    {
+        "name": "resource_intensive",
+        "options": "Low,Medium,High"
+    },
+    {
+        "name": "costs",
+        "options": "Low,Medium,High"
+    }
+]

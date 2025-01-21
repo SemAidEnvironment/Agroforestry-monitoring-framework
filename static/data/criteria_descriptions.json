@@ -1,0 +1,27 @@
+{
+  "phase_of_project": {
+    "Baseline_Assessment": "Initial evaluation to establish an understanding of the project area and the current situations regarding key reporting project areas.",
+    "Monitoring_and_Evaluation": "Ongoing tracking of progress and assessing alignment with project goals during implementation (every year).",
+    "End_baseline_Assessment": "Final evaluation to measure outcomes and impacts against initial baseline report."
+  },
+  "budget": {
+    "Low": "No specific budget line for Monitoring & Evaluation (M&E) beyond covering salaries for key consultants.",
+    "Medium": "M&E budget includes various streams beyond salaries, such as funding for certain methodologies (laboratory testing, buying tablets, etc.).",
+    "High": "Substantial funding available, either through dedicated M&E budget lines or the organization’s financial stability, allowing for investments in advanced data collection methods."
+  },
+  "skills_required": {
+    "Low": "Basic skills needed, such as creating questionnaires, conducting interviews, or using tablets. Training can easily address these needs.",
+    "Moderate": "Includes basic skills (questionnaires, interviews, tablet use) plus some technical knowledge like sampling strategy design or sample conservation. Staff can be trained, but key technical personnel are needed for quality assurance.",
+    "High": "Advanced technical skills required, such as programming or remote sensing expertise. Specialized staff with relevant experience are essential."
+  },
+  "resource_intensive": {
+    "Low": "Minimal human or economic resources needed for setup.",
+    "Medium": "Moderate human or economic resources needed for setup.",
+    "High": "Significant resources required, such as hiring local staff for interviews or purchasing costly equipment/systems."
+  },
+  "costs": {
+    "Low": "Minimal costs, such as conducting interviews.",
+    "Medium": "Moderate costs associated with the method, for example, sending samples for a laboratory test.",
+    "High": "High costs due to the need for equipment purchases, software use, subscription fees (e.g., satellite data), or similar expenses."
+  }
+}
